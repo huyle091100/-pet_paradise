@@ -1,5 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
+import "flowbite"
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
 import "controllers"
 import "./js/jquery-3.6.0.min.js"
 import "./js/jquery-ui.js"

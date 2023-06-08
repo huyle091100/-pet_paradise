@@ -1,0 +1,38 @@
+<div class="login-section pt-120 pb-120">
+  <div class="container">
+    <div class="row d-flex justify-content-center g-4">
+      <div class="col-xl-6 col-lg-8 col-md-10">
+        <div class="form-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
+          <div class="form-title">
+            <h3>Log In</h3>
+            <p>New Member? <a href="<%= new_user_registration_path %>">signup here</a></p>
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-inner">
+                  <label>Enter Your Email *</label>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter Your Email" %>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-inner">
+                  <label>Password *</label>
+                  <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter Your Password" %>
+                  <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-agreement form-inner d-flex justify-content-between flex-wrap">
+                  <a href="<%= new_password_path(resource_name) %>" class="forgot-pass">Forgotten Password</a>
+                </div>
+              </div>
+            </div>
+            <button class="account-btn" type="submit">Log in</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
