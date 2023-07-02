@@ -1,0 +1,37 @@
+<div class="signup-section pt-120 pb-120">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-6 col-lg-8 col-md-10">
+        <div class="form-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
+          <div class="form-title">
+            <h3>Change your password</h3>
+          </div>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-inner">
+                  <label>Password *</label>
+                  <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br/>
+                  <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter Your Password" %>
+                  <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-inner">
+                  <label>Confirm Password *</label>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+                  <i class="bi bi-eye-slash" id="togglePassword2"></i>
+                </div>
+              </div>
+            </div>
+            <button class="account-btn" type="submit">Change my password</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
