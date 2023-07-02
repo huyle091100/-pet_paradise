@@ -2559,7 +2559,6 @@ header.style-2 {
 header.style-3 {
     position: relative;
     width: 100%;
-    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12596,18 +12595,11 @@ footer{
         position: absolute;
         left: 0;
         bottom:15px;
-        background: var(--primary-color3);
         height: 1px;
         width: 100%;
         @include sm-down-device{
             display: none;
             visibility: hidden;
-        }
-    }
-    &:hover{
-        color: #999;
-        &::after{
-            background: #999;
         }
     }
 }

@@ -2379,7 +2379,6 @@ header.style-2 .main-menu ul li.menu-item-has-children > i {
 header.style-3 {
   position: relative;
   width: 100%;
-  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;

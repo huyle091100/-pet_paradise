@@ -1,0 +1,3 @@
+<% if resource.errors.any? %>
+  <%= render partial: "shared/notifications", locals: {message: resource.errors.full_messages.first} %>
+<% end %>
