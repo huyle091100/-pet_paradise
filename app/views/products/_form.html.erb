@@ -1,0 +1,54 @@
+<%= form_with(model: product, class: "contents") do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-inner">
+        <label>Name *</label>
+        <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-inner">
+        <label>Price *</label>
+        <%= form.number_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-inner">
+        <label>Quantity *</label>
+        <%= form.number_field :quantity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-inner">
+        <label>Image</label>
+        <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", accept:'image/*' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-inner">
+        <label>Description</label>
+        <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+    </div>
+  </div>
+
+  <button class="account-btn" type="submit">Submit</button>
+<% end %>
