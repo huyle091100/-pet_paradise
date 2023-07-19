@@ -20,3 +20,19 @@
 @import "css/slick";
 @import "css/slick-theme";
 @import "font-awesome";
+
+.number_on_cart {
+  content: attr(value);
+  font-size: 12px;
+  background: #F46F30;
+  border-radius: 50%;
+  padding: 3px;
+  position: absolute;
+  left: 20px;
+  top: -6px;
+  opacity: 0.9;
+  color: white;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
