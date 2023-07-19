@@ -1,3 +1,9 @@
 <%= turbo_stream.prepend "subtotal_#{@product.id}" do %>
   <%= render "carts/subtotal", product: @product %>
 <% end %>
+<%= turbo_stream.prepend "total_#{current_user.id}" do %>
+  <%= render "carts/total", total: @total %>
+<% end %>
+<%= turbo_stream.prepend "cart_#{current_user.id}" do %>
+  <%= render "layouts/cart", cart: @cart %>
+<% end %>

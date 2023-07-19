@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   include ActiveStorage::SetCurrent
 
   before_action :set_product, only: [:create, :update_quantity]
+  before_action :total, only: [:index, :checkout]
   def index
     products = current_user.carts.group(:product_id).count.keys
     @carts = Product.where(id: products)
@@ -34,9 +35,24 @@ class CartsController < ApplicationController
         carts_active.reload
       end
     end
+    @total = 0
+    current_user.carts.active.includes(:product).each do |l_prod|
+      @total += l_prod.product.price
+    end
+    @cart = current_user.carts.active.count
     respond_to do |format|
         format.turbo_stream
         # flash[:notice] = "Added a product to cart."
+    end
+  end
+
+  def checkout
+    momo = Momo::GetPaymentUrlService.call({user: current_user, amount: @total})
+    if momo["resultCode"] == 0
+      redirect_to momo["payUrl"], allow_other_host: true
+    else
+      flash[:notice] = "Checkout momo fail!"
+      redirect_to carts_path
     end
   end
 
@@ -44,6 +60,13 @@ class CartsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(cart_params[:product_id])
+  end
+
+  def total
+    @total = 0
+    current_user.carts.active.includes(:product).each do |l_prod|
+      @total += l_prod.product.price
+    end
   end
 
   # Only allow a list of trusted parameters through.

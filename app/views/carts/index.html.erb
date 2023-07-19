@@ -31,7 +31,9 @@
           <thead>
           <tr>
             <th>Cart Totals</th>
-            <th>$128.70</th>
+            <th id="total_<%= current_user.id %>">
+              <%= render partial: "carts/total", locals: {total: @total} %>
+            </th>
           </tr>
           </thead>
           <tbody>
@@ -39,7 +41,13 @@
         </table>
         <ul class="cart-btn-group">
           <li><a href="<%= shop_path %>" class="primary-btn2 btn-lg">Continue to shopping</a></li>
-          <li><a href="check-out.html" class="primary-btn3 btn-lg">Checkout with momo</a></li>
+          <li>
+<!--            <a href="<%#= checkout_carts_path %>" class="primary-btn3 btn-lg" data-turbo="false" methods="post">Checkout with momo</a>-->
+            <%#= button_to 'Checkout with momo', checkout_carts_path, class: 'primary-btn3 btn-lg', data: { turbo: false, turbo_method: :post, method: :post }, method: :post %>
+            <%= button_to checkout_carts_path, data: { turbo: false }, class: "primary-btn3 btn-lg" do %>
+              Checkout with momo
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>

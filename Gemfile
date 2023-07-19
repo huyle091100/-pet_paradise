@@ -22,6 +22,7 @@ gem "stimulus-rails"
 gem "sidekiq"
 gem "cancan"
 gem "rolify"
+gem "rack-cors"
 
 group :development, :test do
   gem "pry"
