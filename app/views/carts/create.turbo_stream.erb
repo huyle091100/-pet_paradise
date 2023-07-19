@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "cart_#{current_user.id}" do %>
+  <%= render "layouts/cart", cart: @cart %>
+<% end %>

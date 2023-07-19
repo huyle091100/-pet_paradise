@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "subtotal_#{@product.id}" do %>
+  <%= render "carts/subtotal", product: @product %>
+<% end %>

@@ -1,0 +1,47 @@
+<div class="cart-section pt-120 pb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-wrapper">
+          <table class="eg-table table cart-table">
+            <thead>
+            <tr>
+              <th>Delete</th>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @carts.each do |product| %>
+            <%= render partial: "carts/cart", locals: {product: product} %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-8">
+        <table class="table total-table">
+          <thead>
+          <tr>
+            <th>Cart Totals</th>
+            <th>$128.70</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <ul class="cart-btn-group">
+          <li><a href="<%= shop_path %>" class="primary-btn2 btn-lg">Continue to shopping</a></li>
+          <li><a href="check-out.html" class="primary-btn3 btn-lg">Checkout with momo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

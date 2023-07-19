@@ -1,0 +1,46 @@
+<div class="col-lg-4 col-md-4 col-sm-6" id="<%= "product_#{product.id}" %>">
+  <div class="collection-card">
+    <div class="offer-card">
+      <span>Offer</span>
+    </div>
+    <div class="collection-img">
+      <img class="img-gluid" src="<%= product.image_url %>" alt="" style="height: 168px;object-fit: contain;">
+      <div class="view-dt-btn">
+        <div class="plus-icon">
+          <i class="bi bi-plus"></i>
+        </div>
+        <a href="shop-details.html">View Details</a>
+      </div>
+      <ul class="cart-icon-list">
+        <li>
+          <%= form_for Cart.new, url: carts_path, data: { turbo: true }, html: {id: "add_to_cart_#{product.id}"}, method: :post do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.hidden_field :user_id, value: current_user&.id %>
+            <button type="submit"><a><%= image_tag "icon/Icon-cart3.svg" %></a></button>
+          <% end %>
+<!--          <a href="cart.html">-->
+          <%#= image_tag "icon/Icon-cart3.svg" %>
+<!--          </a>-->
+        </li>
+        <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+      </ul>
+    </div>
+    <div class="collection-content text-center">
+      <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
+      <div class="price">
+        <h6>$25.00</h6>
+        <del>$30.00</del>
+      </div>
+      <div class="review">
+        <ul>
+          <li><i class="bi bi-star-fill"></i></li>
+          <li><i class="bi bi-star-fill"></i></li>
+          <li><i class="bi bi-star-fill"></i></li>
+          <li><i class="bi bi-star-fill"></i></li>
+          <li><i class="bi bi-star-fill"></i></li>
+        </ul>
+        <span>(50)</span>
+      </div>
+    </div>
+  </div>
+</div>
