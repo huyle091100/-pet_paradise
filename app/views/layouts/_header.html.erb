@@ -7,7 +7,7 @@
           <a href="tel:+1(541)754-3020"><%= image_tag "icon/support2.svg" %> +1 (541) 754-3010</a>
         </div>
         <div class="opening-time text-center">
-          <p>Free Shipping On Shipment of $80 Or More</p>
+          <p>Free Shipping On Shipment of 100.000 VND Or More</p>
         </div>
         <div class="social-area">
           <ul>
@@ -42,15 +42,15 @@
         </div>
       </div>
       <ul class="menu-list">
-        <li class="menu-item-has-children active">
-          <a href="#" class="drop-down">Home</a><i class="bi bi-plus dropdown-icon"></i>
-          <ul class="sub-menu z-10">
-            <li><a href="<%= root_path %>">Home One</a></li>
-            <li><a href="index2.html">Home Two</a></li>
-            <li><a class="active" href="index3.html">Home Three</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
+<!--        <li class="menu-item-has-children active">-->
+<!--          <a href="#" class="drop-down">Home</a><i class="bi bi-plus dropdown-icon"></i>-->
+<!--          <ul class="sub-menu z-10">-->
+<!--            <li><a href="<%#= root_path %>">Home One</a></li>-->
+<!--            <li><a href="index2.html">Home Two</a></li>-->
+<!--            <li><a class="active" href="index3.html">Home Three</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li><a href="about.html">About</a></li>-->
         <li class="menu-item-has-children">
           <a href="#">Services</a><i class="bi bi-plus dropdown-icon"></i>
           <ul class="sub-menu z-10">
@@ -60,18 +60,18 @@
             <li><a href="service-details.html">Veterinary</a></li>
           </ul>
         </li>
-        <li class="menu-item-has-children">
-          <a href="#" class="drop-down">Pages</a><i class="bi bi-plus dropdown-icon"></i>
-          <ul class="sub-menu z-10">
-            <li><a href="pricing-plan.html">Pricing Plan</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="3col-gallery.html">Gallery</a></li>
-            <li><a href="faq.html">Faq</a></li>
-            <li><a href="error.html">Error</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="sign-up.html">Sign Up</a></li>
-          </ul>
-        </li>
+<!--        <li class="menu-item-has-children">-->
+<!--          <a href="#" class="drop-down">Pages</a><i class="bi bi-plus dropdown-icon"></i>-->
+<!--          <ul class="sub-menu z-10">-->
+<!--            <li><a href="pricing-plan.html">Pricing Plan</a></li>-->
+<!--            <li><a href="team.html">Our Team</a></li>-->
+<!--            <li><a href="3col-gallery.html">Gallery</a></li>-->
+<!--            <li><a href="faq.html">Faq</a></li>-->
+<!--            <li><a href="error.html">Error</a></li>-->
+<!--            <li><a href="login.html">Login</a></li>-->
+<!--            <li><a href="sign-up.html">Sign Up</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
         <li>
           <a href="<%= shop_path %>">Shop</a><i class="bi bi-plus dropdown-icon"></i>
 <!--          <ul class="sub-menu z-10">-->
@@ -81,15 +81,15 @@
 <!--            <li><a href="check-out.html">Check Out</a></li>-->
 <!--          </ul>-->
         </li>
-        <li class="menu-item-has-children">
-          <a href="#">Blog</a><i class="bi bi-plus dropdown-icon"></i>
-          <ul class="sub-menu z-10">
-            <li><a href="blog-grid.html">Blog Grid</a></li>
-            <li><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a></li>
-            <li><a href="blog-standard.html">Blog Standard</a></li>
-            <li><a href="blog-details.html">Blog Details</a></li>
-          </ul>
-        </li>
+<!--        <li class="menu-item-has-children">-->
+<!--          <a href="#">Blog</a><i class="bi bi-plus dropdown-icon"></i>-->
+<!--          <ul class="sub-menu z-10">-->
+<!--            <li><a href="blog-grid.html">Blog Grid</a></li>-->
+<!--            <li><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a></li>-->
+<!--            <li><a href="blog-standard.html">Blog Standard</a></li>-->
+<!--            <li><a href="blog-details.html">Blog Details</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
         <% if current_user %>
 <!--        <li><a href="<%#= destroy_user_session_path %>" data-turbo-method="delete">Logout</a></li>-->
           <li><%= link_to "Logout", destroy_user_session_path, data: { turbo: true, turbo_method: :delete } %>

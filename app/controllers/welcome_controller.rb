@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   end
 
   def shop
-    @products = Product.all
+    binding.pry
+    @products = Product.all.page(params[:page] || 1).per(@limit).order(created_at: :desc)
   end
 end

@@ -3,129 +3,46 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="shop-sidebar">
-          <div class="shop-widget">
-            <h5 class="shop-widget-title">Price Range</h5>
-            <div class="range-widget">
-              <div id="slider-range" class="price-filter-range"></div>
-              <div class="mt-25 d-flex justify-content-between gap-4">
-                <input type="number" min=100 max="499" oninput="validity.valid||(value='100');" id="min_price" class="price-range-field" />
-                <input type="number" min=100 max="500" oninput="validity.valid||(value='500');" id="max_price" class="price-range-field" />
+          <form enctype="multipart/form-data" action="/shop" accept-charset="UTF-8" method="get">
+            <div class="shop-widget">
+              <h5 class="shop-widget-title">Price Range</h5>
+              <div class="range-widget">
+                <div id="slider-range" class="price-filter-range"></div>
+                <div class="mt-25 d-flex justify-content-between gap-4">
+                  <input type="number" name="min_price" disabled min=0 max="1000000" id="min_price" class="price-range-field block shadow rounded-md border border-gray-200 outline-none price-range" style="color: #F46F30" />
+                  <input type="number" name="max_price" disabled min=0 max="1000000" id="max_price" class="price-range-field block shadow rounded-md border border-gray-200 outline-none price-range" style="color: #F46F30" />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="shop-widget">
-            <div class="check-box-item">
-              <h5 class="shop-widget-title">Category</h5>
-              <div class="checkbox-container">
-                <label class="containerss">Food Toppers
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Milk Replacers
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Canned Food
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Veterinary Authorized Diets
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Bones & Rawhide
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
+            <div class="shop-widget">
+              <div class="check-box-item">
+                <h5 class="shop-widget-title">Category</h5>
+                <div class="checkbox-container">
+                  <label class="containerss">Dog
+                    <input type="checkbox" name="category[]" value="dog">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerss">Cat
+                    <input type="checkbox" name="category[]" value="cat">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerss">Bird
+                    <input type="checkbox" name="category[]" value="bird">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerss">Fish
+                    <input type="checkbox" name="category[]" value="fish">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerss">Small Animal
+                    <input type="checkbox" name="category[]" value="small_animal">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="shop-widget">
-            <div class="check-box-item">
-              <h5 class="shop-widget-title">Brand</h5>
-              <div class="checkbox-container">
-                <label class="containerss">Fancy Feast
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Gentle Giants
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Purina Pro Plan
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Stella & Chewy's
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Pet Dreams
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-widget">
-            <div class="check-box-item">
-              <h5 class="shop-widget-title">Health Consideration</h5>
-              <div class="checkbox-container">
-                <label class="containerss">Brain Development
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Bladder
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Allergies
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Bone Development
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Dehydration
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="shop-widget">
-            <div class="check-box-item">
-              <h5 class="shop-widget-title">Flavor</h5>
-              <div class="checkbox-container">
-                <label class="containerss">Beef
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Chicken
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Fish
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Duck
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="containerss">Other
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-
+            <button class="primary-btn3 btn-lg" type="submit">Search</button>
+          </form>
         </div>
       </div>
       <div class="col-lg-9">
@@ -136,20 +53,9 @@
               <div class="multiselect-area">
                 <div class="single-select">
                   <span>Show</span>
-                  <select class="defult-select-drowpown" id="color-dropdown">
-                    <option selected value="0">12</option>
-                    <option value="1">15</option>
-                    <option value="2">18</option>
-                    <option value="3">21</option>
-                    <option value="4">25</option>
-                  </select>
-                </div>
-                <div class="single-select two">
-                  <select class="defult-select-drowpown" id="eyes-dropdown">
-                    <option selected value="0">Default</option>
-                    <option value="1">Grid</option>
-                    <option value="2">Closed</option>
-                  </select>
+                  <%= form_tag('/shop', remote: true, id: 'limit_form', method: :get, class: "d-flex flex-row justify-content-end") do %>
+                    <%= select_tag :limit, options_for_select([12, 25, 50, 100], selected: params[:limit] || 12), onchange: "$('#limit_form').submit();", class: "defult-select-drowpown" %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -164,12 +70,7 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <div class="paginations-area">
               <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-left-short"></i></a></li>
-                  <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                  <li class="page-item"><a class="page-link" href="#">02</a></li>
-                  <li class="page-item"><a class="page-link" href="#">03</a></li>
-                  <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-right-short"></i></a></li>
+                <%= paginate @products %>
                 </ul>
               </nav>
             </div>
@@ -179,3 +80,25 @@
     </div>
   </div>
 </div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    // $("input[data-type='currency']").on({
+    //     change: function(event) {
+    //         if(event.which >= 37 && event.which <= 40) return;
+    //
+    //         console.log(1)
+    //         // format number
+    //         $(this).val(function(index, value) {
+    //             return value
+    //                 .replace(/\D/g, "")
+    //                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    //                 ;
+    //         });
+    //     },
+    // });
+    $(document).ready(function() {
+        $("#slider-range").slider({
+            values: [20000, 30000]
+        });
+    });
+</script>
