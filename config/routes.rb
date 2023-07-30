@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products
+  resources :users
   resources :carts do
     collection do
       patch :update_quantity

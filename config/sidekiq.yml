@@ -1,4 +1,12 @@
 ---
-:concurrency: 5
-:queues:
+verbose: false
+concurrency: 10
+pidfile: ./tmp/pids/sidekiq.pid
+logfile: ./log/sidekiq.log
+queues:
   - default
+  - low
+production:
+  concurrency: 25
+staging:
+  concurrency: 15

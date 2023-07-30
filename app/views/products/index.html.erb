@@ -1,14 +1,24 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Products</h1>
-    <%= link_to 'New product', new_product_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-
-  <div id="products" class="min-w-full">
-    <%= render @products %>
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h5 class="card-title">Products List</h5>
+        <table class="responsive-table datatable-select-inputs">
+          <thead>
+          <tr>
+            <th style="width: 15%">Name</th>
+            <th style="width: 30%">Description</th>
+            <th style="width: 15%">Price</th>
+            <th style="width: 20%">Image</th>
+            <th style="width: 10%">Quantity</th>
+            <th style="width: 10%">Category</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%= render @products %>
+          </tfoot>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

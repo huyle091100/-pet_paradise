@@ -70,6 +70,8 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       Rake::Task["puma:restart"].reenable
       invoke "puma:restart"
+      execute "cd /home/rails/current"
+      execute :sudo, :systemctl, :restart, :sidekiq
     end
   end
 
