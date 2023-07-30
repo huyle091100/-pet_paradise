@@ -12,31 +12,36 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="form-inner">
         <label>Name *</label>
         <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
       </div>
     </div>
-    <div class="col-md-3">
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
       <div class="form-inner">
         <label>Price *</label>
         <%= form.number_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
       </div>
-    </div>
-    <div class="col-md-3">
       <div class="form-inner">
         <label>Quantity *</label>
         <%= form.number_field :quantity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
       </div>
+      <div class="form-inner" style="margin-bottom: 50px">
+        <label>Category *</label><br/>
+        <%= form.select :category, Product.categories.keys.map{|type| [type.humanize, type]}, {}, {class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"} %>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-inner">
-        <label>Image</label>
-        <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", accept:'image/*' %>
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="form-inner">
+          <label>Image</label>
+          <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full uploadFile", accept:'image/*' %>
+          <div class="imagePreview"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,3 +57,26 @@
 
   <button class="account-btn" type="submit">Submit</button>
 <% end %>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    jQuery(function($) {
+        $(document).on("change",".uploadFile", function()
+        {
+            var uploadFile = $(this);
+            var files = !!this.files ? this.files : [];
+            if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+            console.log(/^image/.test( files[0].type))
+
+            if (/^image/.test( files[0].type)){ // only image file
+                var reader = new FileReader(); // instance of the FileReader
+                reader.readAsDataURL(files[0]); // read the local file
+
+                reader.onloadend = function(){ // set image data as background of div
+                    //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                    uploadFile.closest(".form-inner").find('.imagePreview').css("background-image", "url("+this.result+")");
+                }
+            }
+
+        });
+    });
+</script>

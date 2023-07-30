@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
-gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+gem "rails", "7.0.5"
 gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
@@ -23,6 +23,7 @@ gem "sidekiq"
 gem "cancan"
 gem "rolify"
 gem "rack-cors"
+gem "kaminari"
 
 group :development, :test do
   gem "pry"
@@ -31,4 +32,10 @@ end
 
 group :development do
   gem "web-console"
+  gem "capistrano"
+  gem "capistrano3-puma"
+  gem "capistrano-rails", require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano-rvm"
+  gem 'capistrano-sidekiq'
 end

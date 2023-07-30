@@ -737,13 +737,13 @@ $('#price-range-submit').hide();
 
 	  $('#price-range-submit').show();
 
-	  var min_price_range = parseInt($("#min_price").val(), 10);
+	  var min_price_range = parseInt($("#min_price").val(), 0);
 
-	  var max_price_range = parseInt($("#max_price").val(), 500);
+	  var max_price_range = parseInt($("#max_price").val(), 1000000);
 	  
 	  if(min_price_range == max_price_range){
 
-			max_price_range = min_price_range + 100;
+			max_price_range = min_price_range + 10000;
 			
 			$("#min_price").val(min_price_range);		
 			$("#max_price").val(max_price_range);
@@ -761,9 +761,9 @@ $('#price-range-submit').hide();
 		range: true,
 		orientation: "horizontal",
 		min: 0,
-		max: 500,
-		values: [0, 500],
-		step: 10,
+		max: 1000000,
+		values: [0, 1000000],
+		step: 10000,
 
 		slide: function (event, ui) {
 		  if (ui.values[0] == ui.values[1]) {
@@ -795,9 +795,9 @@ $('#price-range-submit').hide();
 		range: true,
 		orientation: "horizontal",
 		min: 0,
-		max: 500,
-		values: [0, 500],
-		step: 10,
+		max: 1000000,
+		values: [0, 1000000],
+		step: 10000,
 
 		slide: function (event, ui) {
 		  if (ui.values[0] == ui.values[1]) {
