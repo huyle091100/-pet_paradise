@@ -18,7 +18,6 @@ gem "foreman"
 gem "sassc-rails"
 gem "font-awesome-sass"
 gem "tailwindcss-rails"
-gem "stimulus-rails"
 gem "sidekiq"
 gem "cancan"
 gem "rolify"
@@ -36,6 +35,6 @@ group :development do
   gem "capistrano3-puma"
   gem "capistrano-rails", require: false
   gem "capistrano-bundler", require: false
-  gem "capistrano-rvm"
+  gem 'capistrano-asdf'
   gem 'capistrano-sidekiq'
 end

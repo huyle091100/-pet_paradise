@@ -1,85 +1,87 @@
-<!-- ========== Hero Style3 Start============= -->
-<div class="hero3 mb-90">
-  <div class="background-text">
-    <h2 class="marquee_text">
-      <%= image_tag "icon/marque-foot.svg" %>
-      <span>Get exciting Discount</span> Up To 50%
-      <%= image_tag "icon/marque-foot.svg" %><span>On Your first buying</span> Up To 50%</h2>
-  </div>
-  <div class="swiper hero3-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="hero-wrapper">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <div class="banner-content">
-                  <h6>Limited Offer</h6>
-                  <h1>Best Food For Your Loving Dog.</h1>
-                  <div class="btn-group">
-                    <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
-                    <a class="primary-btn6" href="shop-details.html">View Details</a>
+<% unless current_user && current_user.has_role?(:admin) %>
+  <!-- ========== Hero Style3 Start============= -->
+  <div class="hero3 mb-90">
+    <div class="background-text">
+      <h2 class="marquee_text">
+        <%= image_tag "icon/marque-foot.svg" %>
+        <span>Get exciting Discount</span> Up To 50%
+        <%= image_tag "icon/marque-foot.svg" %><span>On Your first buying</span> Up To 50%</h2>
+    </div>
+    <div class="swiper hero3-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="hero-wrapper">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="banner-content">
+                    <h6>Limited Offer</h6>
+                    <h1>Best Food For Your Loving Dog.</h1>
+                    <div class="btn-group">
+                      <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                      <a class="primary-btn6" href="shop-details.html">View Details</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6 d-flex justify-content-end">
-                <div class="hero-img">
-                  <div class="offer-card">
-                    <%= image_tag "bg/h3-banner-offer.png" %>
+                <div class="col-lg-6 d-flex justify-content-end">
+                  <div class="hero-img">
+                    <div class="offer-card">
+                      <%= image_tag "bg/h3-banner-offer.png" %>
+                    </div>
+                    <%= image_tag "bg/h3-banner-img.png" %>
                   </div>
-                  <%= image_tag "bg/h3-banner-img.png" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-wrapper">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <div class="banner-content">
-                  <h6>Limited Offer</h6>
-                  <h1>Best Food For Your Loving Cat.</h1>
-                  <div class="btn-group">
-                    <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
-                    <a class="primary-btn6" href="shop-details.html">View Details</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 d-flex justify-content-end">
-                <div class="hero-img">
-                  <div class="offer-card">
-                    <%= image_tag "bg/h3-banner-offer.png" %>
-                  </div>
-                  <%= image_tag "bg/h3-banner-img-cat.png" %>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="hero-wrapper">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <div class="banner-content">
-                  <h6>Limited Offer</h6>
-                  <h1>Best Food For Your Loving Dog.</h1>
-                  <div class="btn-group">
-                    <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
-                    <a class="primary-btn6" href="shop-details.html">View Details</a>
+        <div class="swiper-slide">
+          <div class="hero-wrapper">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="banner-content">
+                    <h6>Limited Offer</h6>
+                    <h1>Best Food For Your Loving Cat.</h1>
+                    <div class="btn-group">
+                      <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                      <a class="primary-btn6" href="shop-details.html">View Details</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-end">
+                  <div class="hero-img">
+                    <div class="offer-card">
+                      <%= image_tag "bg/h3-banner-offer.png" %>
+                    </div>
+                    <%= image_tag "bg/h3-banner-img-cat.png" %>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 d-flex justify-content-end">
-                <div class="hero-img">
-                  <div class="offer-card">
-                    <%= image_tag "bg/h3-banner-offer.png" %>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="hero-wrapper">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="banner-content">
+                    <h6>Limited Offer</h6>
+                    <h1>Best Food For Your Loving Dog.</h1>
+                    <div class="btn-group">
+                      <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                      <a class="primary-btn6" href="shop-details.html">View Details</a>
+                    </div>
                   </div>
-                  <%= image_tag "bg/h3-banner-img-dog.png" %>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-end">
+                  <div class="hero-img">
+                    <div class="offer-card">
+                      <%= image_tag "bg/h3-banner-offer.png" %>
+                    </div>
+                    <%= image_tag "bg/h3-banner-img-dog.png" %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,990 +89,990 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="right-sidebar">
-    <div class="slider-pagination-area">
-      <div class="h3-hero-slider-pagination"></div>
-    </div>
-  </div>
-</div>
-<!-- ========== Hero Style3 Start============= -->
-<!-- ========== Home3 Categories Start============= -->
-<div class="home3-categoty-area pt-120 mb-120">
-  <div class="container">
-    <div class="row mb-60">
-      <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
-        <div class="section-title3">
-          <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Browse By Categories</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
-        </div>
-        <div class="slider-btn-wrap">
-          <div class="slider-btn prev-btn-11">
-            <i class="bi bi-arrow-left"></i>
-          </div>
-          <div class="slider-btn next-btn-11">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <div class="swiper h3-category-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/dog.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Dog Supplies</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-1.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/cat.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Cat Supplies</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-2.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/bird.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Bird Supplies</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-4.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/Rabbit.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Small Animal</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-5.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/Acces.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Accessories</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-6.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="category-card">
-                <a href="shop.html" class="category-card-inner">
-                  <div class="category-card-front">
-                    <div class="category-icon">
-                      <%= image_tag "icon/fish.svg" %>
-                    </div>
-                    <div class="content">
-                      <h4>Fish Supplies</h4>
-                    </div>
-                  </div>
-                  <div class="category-card-back">
-                    <%= image_tag "bg/h3-category-3.png" %>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <div class="right-sidebar">
+      <div class="slider-pagination-area">
+        <div class="h3-hero-slider-pagination"></div>
       </div>
     </div>
   </div>
-</div>
-<!-- ========== Home3 Categories End============= -->
-
-<!-- ========== Home3 Colection Start============= -->
-<div class="home3-collection-area mb-120">
-  <div class="container">
-    <div class="row mb-60">
-      <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
-        <div class="section-title3">
-          <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Find Pet Collections</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
-        </div>
-        <div class="h3-view-btn d-md-flex d-none">
-          <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
-        </div>
-      </div>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="offer-card">
-            <span>Offer</span>
+  <!-- ========== Hero Style3 Start============= -->
+  <!-- ========== Home3 Categories Start============= -->
+  <div class="home3-categoty-area pt-120 mb-120">
+    <div class="container">
+      <div class="row mb-60">
+        <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="section-title3">
+            <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Browse By Categories</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
           </div>
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-01.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
-            <div class="price">
-              <h6>$25.00</h6>
-              <del>$30.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-02.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Friskies Kitten Discoveries.</a></h4>
-            <div class="price">
-              <h6>$39.00</h6>
-              <del>$39.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="offer-card sale">
-            <span>Hot Sale</span>
-          </div>
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-03.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Joules Cat Cotton House.</a></h4>
-            <div class="price">
-              <h6>$150.00</h6>
-              <del>$200.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-04.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Natural Dog Fresh Food.</a></h4>
-            <div class="price">
-              <h6>$18.00</h6>
-              <del>$30.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="offer-card">
-            <span>Offer</span>
-          </div>
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-05.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Ferplast Cat Journey Bag.</a></h4>
-            <div class="price">
-              <h6>$250.00</h6>
-              <del>$300.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-06.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Jungle Excellence Of Nature</a></h4>
-            <div class="price">
-              <h6>$50.00</h6>
-              <del>$80.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="offer-card sold-out">
-            <span>Sold Out</span>
-          </div>
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-07.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Rooibos Pet Food Supple</a></h4>
-            <div class="price">
-              <h6>$75.00</h6>
-              <del>$80.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="collection-card">
-          <div class="collection-img">
-            <%= image_tag "bg/category/h3-collection-08.png" %>
-            <div class="view-dt-btn">
-              <div class="plus-icon">
-                <i class="bi bi-plus"></i>
-              </div>
-              <a href="shop-details.html">View Details</a>
-            </div>
-            <ul class="cart-icon-list">
-              <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-              <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-            </ul>
-          </div>
-          <div class="collection-content text-center">
-            <h4><a href="shop-details.html">Pedigree Natuar Dog Food</a></h4>
-            <div class="price">
-              <h6>$69.00</h6>
-              <del>$89.00</del>
-            </div>
-            <div class="review">
-              <ul>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-                <li><i class="bi bi-star-fill"></i></li>
-              </ul>
-              <span>(50)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row d-md-none d-block pt-30">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <div class="h3-view-btn">
-          <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ========== Home3 Colection End============= -->
-<!-- ========== Home3 Offer Start============= -->
-<div class="h3-offer-area mb-120">
-  <div class="container-fluid p-0 overflow-hidden">
-    <div class="row">
-      <div class="col-lg-6 p-0">
-        <div class="offer-left">
-          <div class="offer-content">
-            <span>50% Off</span>
-            <h2>Ingredients for dogs with packages.</h2>
-            <a class="primary-btn6" href="shop.html">Shop Now</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 p-0">
-        <div class="offer-right">
           <div class="slider-btn-wrap">
-            <div class="slider-btn prev-btn-15 mb-40">
-              <i class="bi bi-arrow-up"></i>
+            <div class="slider-btn prev-btn-11">
+              <i class="bi bi-arrow-left"></i>
             </div>
-            <div class="slider-btn next-btn-15">
-              <i class="bi bi-arrow-down"></i>
+            <div class="slider-btn next-btn-11">
+              <i class="bi bi-arrow-right"></i>
             </div>
           </div>
-          <div class="countdown-timer">
-            <ul data-countdown="2023-03-23">
-              <li data-days="00">00</li>
-              <li data-hours="00">00</li>
-              <li data-minutes="00">00</li>
-              <li data-seconds="00">00</li>
-            </ul>
-          </div>
-          <div class="row position-relative">
-            <div class="swiper h3-offer-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="offer-right-card">
-                    <div class="offer-img">
-                      <div class="offer-batch">
-                        <%= image_tag "bg/h3-offer-card.png" %>
-                      </div>
-                      <%= image_tag "bg/h3-offer-right.png" %>
-                    </div>
-                    <div class="offer-content">
-                      <span>Limited Offer</span>
-                      <h2>Whiskas Dog Food Roaster Chicken</h2>
-                      <div class="price">
-                        <h6>$25.00</h6>
-                        <del>$30.00</del>
-                      </div>
-                      <a class="primary-btn6" href="shop.html">Shop Now</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="offer-right-card">
-                    <div class="offer-img">
-                      <div class="offer-batch">
-                        <%= image_tag "bg/h3-offer-card.png" %>
-                      </div>
-                      <%= image_tag "bg/h3-offer-right2.png" %>
-                    </div>
-                    <div class="offer-content">
-                      <span>Limited Offer</span>
-                      <h2>Jungle Excellence Of Nature</h2>
-                      <div class="price">
-                        <h6>$25.00</h6>
-                        <del>$30.00</del>
-                      </div>
-                      <a class="primary-btn6" href="shop.html">Shop Now</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div class="swiper h3-category-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
 
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/dog.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Dog Supplies</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-1.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/cat.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Cat Supplies</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-2.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/bird.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Bird Supplies</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-4.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/Rabbit.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Small Animal</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-5.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/Acces.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Accessories</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-6.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="category-card">
+                  <a href="shop.html" class="category-card-inner">
+                    <div class="category-card-front">
+                      <div class="category-icon">
+                        <%= image_tag "icon/fish.svg" %>
+                      </div>
+                      <div class="content">
+                        <h4>Fish Supplies</h4>
+                      </div>
+                    </div>
+                    <div class="category-card-back">
+                      <%= image_tag "bg/h3-category-3.png" %>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3 Categories End============= -->
+
+  <!-- ========== Home3 Colection Start============= -->
+  <div class="home3-collection-area mb-120">
+    <div class="container">
+      <div class="row mb-60">
+        <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="section-title3">
+            <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Find Pet Collections</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
+          </div>
+          <div class="h3-view-btn d-md-flex d-none">
+            <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="offer-card">
+              <span>Offer</span>
+            </div>
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-01.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
+              <div class="price">
+                <h6>$25.00</h6>
+                <del>$30.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-02.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Friskies Kitten Discoveries.</a></h4>
+              <div class="price">
+                <h6>$39.00</h6>
+                <del>$39.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="offer-card sale">
+              <span>Hot Sale</span>
+            </div>
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-03.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Joules Cat Cotton House.</a></h4>
+              <div class="price">
+                <h6>$150.00</h6>
+                <del>$200.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-04.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Natural Dog Fresh Food.</a></h4>
+              <div class="price">
+                <h6>$18.00</h6>
+                <del>$30.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="offer-card">
+              <span>Offer</span>
+            </div>
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-05.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Ferplast Cat Journey Bag.</a></h4>
+              <div class="price">
+                <h6>$250.00</h6>
+                <del>$300.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-06.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Jungle Excellence Of Nature</a></h4>
+              <div class="price">
+                <h6>$50.00</h6>
+                <del>$80.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="offer-card sold-out">
+              <span>Sold Out</span>
+            </div>
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-07.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Rooibos Pet Food Supple</a></h4>
+              <div class="price">
+                <h6>$75.00</h6>
+                <del>$80.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="collection-card">
+            <div class="collection-img">
+              <%= image_tag "bg/category/h3-collection-08.png" %>
+              <div class="view-dt-btn">
+                <div class="plus-icon">
+                  <i class="bi bi-plus"></i>
+                </div>
+                <a href="shop-details.html">View Details</a>
+              </div>
+              <ul class="cart-icon-list">
+                <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+              </ul>
+            </div>
+            <div class="collection-content text-center">
+              <h4><a href="shop-details.html">Pedigree Natuar Dog Food</a></h4>
+              <div class="price">
+                <h6>$69.00</h6>
+                <del>$89.00</del>
+              </div>
+              <div class="review">
+                <ul>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                  <li><i class="bi bi-star-fill"></i></li>
+                </ul>
+                <span>(50)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-md-none d-block pt-30">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div class="h3-view-btn">
+            <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- ========== Home3 Offer End============= -->
-<!-- ========== Home3 Essential Items Start============= -->
-<div class="essential-items-area mb-120">
-  <div class="container">
-    <div class="row mb-60">
-      <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
-        <div class="section-title3">
-          <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Essential Items</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
-        </div>
-        <div class="slider-btn-wrap">
-          <div class="slider-btn prev-btn-12">
-            <i class="bi bi-arrow-left"></i>
-          </div>
-          <div class="slider-btn next-btn-12">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="swiper essential-items-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="collection-card">
-                <div class="offer-card">
-                  <span>Offer</span>
-                </div>
-                <div class="collection-img">
-                  <%= image_tag "bg/category/h3-collection-01.png" %>
-                  <div class="view-dt-btn">
-                    <div class="plus-icon">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <a href="shop-details.html">View Details</a>
-                  </div>
-                  <ul class="cart-icon-list">
-                    <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-                    <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-                  </ul>
-                </div>
-                <div class="collection-content">
-                  <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
-                  <div class="price">
-                    <h6>$25.00</h6>
-                    <del>$30.00</del>
-                  </div>
-                  <div class="review">
-                    <ul>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                    </ul>
-                    <span>(50)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="collection-card">
-                <div class="collection-img">
-                  <%= image_tag "bg/category/h3-collection-02.png" %>
-                  <div class="view-dt-btn">
-                    <div class="plus-icon">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <a href="shop-details.html">View Details</a>
-                  </div>
-                  <ul class="cart-icon-list">
-                    <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-                    <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-                  </ul>
-                </div>
-                <div class="collection-content">
-                  <h4><a href="shop-details.html">Friskies Kitten Discoveries.</a></h4>
-                  <div class="price">
-                    <h6>$39.00</h6>
-                    <del>$39.00</del>
-                  </div>
-                  <div class="review">
-                    <ul>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                    </ul>
-                    <span>(50)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="collection-card">
-                <div class="offer-card sale">
-                  <span>Hot Sale</span>
-                </div>
-                <div class="collection-img">
-                  <%= image_tag "bg/category/h3-collection-03.png" %>
-                  <div class="view-dt-btn">
-                    <div class="plus-icon">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <a href="shop-details.html">View Details</a>
-                  </div>
-                  <ul class="cart-icon-list">
-                    <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-                    <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-                  </ul>
-                </div>
-                <div class="collection-content">
-                  <h4><a href="shop-details.html">Joules Cat Cotton House.</a></h4>
-                  <div class="price">
-                    <h6>$150.00</h6>
-                    <del>$200.00</del>
-                  </div>
-                  <div class="review">
-                    <ul>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                    </ul>
-                    <span>(50)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="collection-card">
-                <div class="collection-img">
-                  <%= image_tag "bg/category/h3-collection-04.png" %>
-                  <div class="view-dt-btn">
-                    <div class="plus-icon">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <a href="shop-details.html">View Details</a>
-                  </div>
-                  <ul class="cart-icon-list">
-                    <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-                    <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-                  </ul>
-                </div>
-                <div class="collection-content">
-                  <h4><a href="shop-details.html">Natural Dog Fresh Food.</a></h4>
-                  <div class="price">
-                    <h6>$18.00</h6>
-                    <del>$30.00</del>
-                  </div>
-                  <div class="review">
-                    <ul>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                    </ul>
-                    <span>(50)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="collection-card">
-                <div class="offer-card sold-out">
-                  <span>Sold Out</span>
-                </div>
-                <div class="collection-img">
-                  <%= image_tag "bg/category/h3-collection-07.png" %>
-                  <div class="view-dt-btn">
-                    <div class="plus-icon">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <a href="shop-details.html">View Details</a>
-                  </div>
-                  <ul class="cart-icon-list">
-                    <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
-                    <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
-                  </ul>
-                </div>
-                <div class="collection-content">
-                  <h4><a href="shop-details.html">Rooibos Pet Food Supple</a></h4>
-                  <div class="price">
-                    <h6>$75.00</h6>
-                    <del>$80.00</del>
-                  </div>
-                  <div class="review">
-                    <ul>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                      <li><i class="bi bi-star-fill"></i></li>
-                    </ul>
-                    <span>(50)</span>
-                  </div>
-                </div>
-              </div>
+  <!-- ========== Home3 Colection End============= -->
+  <!-- ========== Home3 Offer Start============= -->
+  <div class="h3-offer-area mb-120">
+    <div class="container-fluid p-0 overflow-hidden">
+      <div class="row">
+        <div class="col-lg-6 p-0">
+          <div class="offer-left">
+            <div class="offer-content">
+              <span>50% Off</span>
+              <h2>Ingredients for dogs with packages.</h2>
+              <a class="primary-btn6" href="shop.html">Shop Now</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ========== Home3 Essential Items End============= -->
-<!-- ========== Home3 Offer Banner Start============= -->
-<div class="offer-banner-area mb-120">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-12 col-md-6 col-sm-8">
-        <div class="offer-banner-card">
-          <div class="offer-img d-lg-none d-flex justify-content-center">
-            <%= image_tag "bg/offer-img-31.png" %>
-          </div>
-          <div class="offer-content">
-            <h4><a href="#">All Natural Cat Food Package </a></h4>
-            <div class="price">
-              <h6>$25.00</h6>
-              <del>$30.00</del>
-            </div>
-          </div>
-          <div class="offer-img d-lg-block d-none">
-            <%= image_tag "bg/offer-img-31.png" %>
-          </div>
+        <div class="col-lg-6 p-0">
           <div class="offer-right">
-            <div class="offer-tag  d-lg-none d-flex justify-content-center">
-              <h3>50%<span>Off</span></h3>
+            <div class="slider-btn-wrap">
+              <div class="slider-btn prev-btn-15 mb-40">
+                <i class="bi bi-arrow-up"></i>
+              </div>
+              <div class="slider-btn next-btn-15">
+                <i class="bi bi-arrow-down"></i>
+              </div>
             </div>
-            <a class="primary-btn6" href="shop.html">Shop Now</a>
-            <div class="offer-tag d-lg-flex d-none">
-              <h3>50%<br><span>Off</span></h3>
+            <div class="countdown-timer">
+              <ul data-countdown="2023-03-23">
+                <li data-days="00">00</li>
+                <li data-hours="00">00</li>
+                <li data-minutes="00">00</li>
+                <li data-seconds="00">00</li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ========== Home3 Offer Banner End============= -->
-<!-- ========== Home3 Testimonial Start============= -->
-<div class="home3-testimonial-area mb-120">
-  <div class="container">
-    <div class="row mb-60">
-      <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
-        <div class="section-title3">
-          <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Customers Think About Us</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
-        </div>
-        <div class="slider-btn-wrap">
-          <div class="slider-btn prev-btn-12">
-            <i class="bi bi-arrow-left"></i>
-          </div>
-          <div class="slider-btn next-btn-12">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-xxl-11">
-        <div class="swiper h3-testimonil-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-wrapper">
-                <div class="review">
-                  <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                  </ul>
-                </div>
-                <p>Pellentesque maximus augue orci, quis congue puru
-                  Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
-                <div class="author-area">
-                  <div class="author-img">
-                    <%= image_tag "bg/h3-autho-1.png" %>
+            <div class="row position-relative">
+              <div class="swiper h3-offer-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="offer-right-card">
+                      <div class="offer-img">
+                        <div class="offer-batch">
+                          <%= image_tag "bg/h3-offer-card.png" %>
+                        </div>
+                        <%= image_tag "bg/h3-offer-right.png" %>
+                      </div>
+                      <div class="offer-content">
+                        <span>Limited Offer</span>
+                        <h2>Whiskas Dog Food Roaster Chicken</h2>
+                        <div class="price">
+                          <h6>$25.00</h6>
+                          <del>$30.00</del>
+                        </div>
+                        <a class="primary-btn6" href="shop.html">Shop Now</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="author-name-deg">
-                    <h3>Sebastian Ethan</h3>
-                    <span>Customer</span>
+                  <div class="swiper-slide">
+                    <div class="offer-right-card">
+                      <div class="offer-img">
+                        <div class="offer-batch">
+                          <%= image_tag "bg/h3-offer-card.png" %>
+                        </div>
+                        <%= image_tag "bg/h3-offer-right2.png" %>
+                      </div>
+                      <div class="offer-content">
+                        <span>Limited Offer</span>
+                        <h2>Jungle Excellence Of Nature</h2>
+                        <div class="price">
+                          <h6>$25.00</h6>
+                          <del>$30.00</del>
+                        </div>
+                        <a class="primary-btn6" href="shop.html">Shop Now</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-wrapper">
-                <div class="review">
-                  <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                  </ul>
-                </div>
-                <p>Pellentesque maximus augue orci, quis congue puru
-                  Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
-                <div class="author-area">
-                  <div class="author-img">
-                    <%= image_tag "bg/h3-autho-2.png" %>
-                  </div>
-                  <div class="author-name-deg">
-                    <h3>Lokand Donark</h3>
-                    <span>Customer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-wrapper">
-                <div class="review">
-                  <ul>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                    <li><i class="bi bi-star-fill"></i></li>
-                  </ul>
-                </div>
-                <p>Pellentesque maximus augue orci, quis congue puru
-                  Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
-                <div class="author-area">
-                  <div class="author-img">
-                    <%= image_tag "bg/h3-autho-3.png" %>
-                  </div>
-                  <div class="author-name-deg">
-                    <h3>Angelina Gushe</h3>
-                    <span>Customer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ========== Home3 Testimonial End============= -->
-<!-- ========== Home3 Newsletter Start============= -->
-<div class="home3-newsletter-area mb-120">
-  <div class="newsletter-img">
-    <%= image_tag "bg/h3-newsletter-img.png" %>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="newsletter-wrap">
-          <div class="section-title3 mb-40">
-            <span>Get In Touch</span>
-            <h2>Let’s Connect Our Newsletter</h2>
-          </div>
-          <form>
-            <div class="form-inner">
-              <input type="text" placeholder="Type Your Email">
-              <button type="submit">Connect</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ========== Home3  Newsletter End============= -->
 
-<!-- ========== Home3 Blog End============= -->
-<div class="home3-blog-area mb-120">
-  <div class="container">
-    <div class="row mb-60">
-      <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
-        <div class="section-title3">
-          <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Our Latest Articles</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
-        </div>
-        <div class="h3-view-btn d-md-flex d-none">
-          <a href="blog-grid.html">View All Blog<%= image_tag "icon/haf-button-2.svg" %></a>
-        </div>
-      </div>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-4 col-md-6 col-sm-10">
-        <div class="blog-card3">
-          <div class="blog-img">
-            <%= image_tag "blog/blog7.png" %>
-          </div>
-          <div class="bolg-content">
-            <div class="cetagoty">
-              <a href="blog-grid.html">Dog bording</a>
             </div>
-            <div class="blog-meta">
-              <ul>
-                <li><a href="blog-grid.html">Angunel John</a></li>
-                <li><a href="blog-grid.html">August 13, 2022</a></li>
-              </ul>
-            </div>
-            <h4><a href="blog-details.html">lobortis pharetra In necat boi risus osan that one far fox.</a></h4>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-10">
-        <div class="blog-card3">
-          <div class="blog-img">
-            <%= image_tag "blog/blog8.png" %>
-          </div>
-          <div class="bolg-content">
-            <div class="cetagoty">
-              <a href="blog-grid.html">Dog bording</a>
-            </div>
-            <div class="blog-meta">
-              <ul>
-                <li><a href="blog-grid.html">Angunel John</a></li>
-                <li><a href="blog-grid.html">August 13, 2022</a></li>
-              </ul>
-            </div>
-            <h4><a href="blog-details.html">Vestibulum eget risus ut est Proina ullamcorper aliquet.</a></h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-10">
-        <div class="blog-card3">
-          <div class="blog-img">
-            <%= image_tag "blog/blog9.png" %>
-          </div>
-          <div class="bolg-content">
-            <div class="cetagoty">
-              <a href="blog-grid.html">Dog bording</a>
-            </div>
-            <div class="blog-meta">
-              <ul>
-                <li><a href="blog-grid.html">Angunel John</a></li>
-                <li><a href="blog-grid.html">August 13, 2022</a></li>
-              </ul>
-            </div>
-            <h4><a href="blog-details.html">Mauris semper mauris eget aliquet dictum diam mauris.</a></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row d-md-none d-block pt-30">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <div class="h3-view-btn">
-          <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- ========== Home3 Blog End============= -->
+  <!-- ========== Home3 Offer End============= -->
+  <!-- ========== Home3 Essential Items Start============= -->
+  <div class="essential-items-area mb-120">
+    <div class="container">
+      <div class="row mb-60">
+        <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="section-title3">
+            <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Essential Items</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
+          </div>
+          <div class="slider-btn-wrap">
+            <div class="slider-btn prev-btn-12">
+              <i class="bi bi-arrow-left"></i>
+            </div>
+            <div class="slider-btn next-btn-12">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="swiper essential-items-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="collection-card">
+                  <div class="offer-card">
+                    <span>Offer</span>
+                  </div>
+                  <div class="collection-img">
+                    <%= image_tag "bg/category/h3-collection-01.png" %>
+                    <div class="view-dt-btn">
+                      <div class="plus-icon">
+                        <i class="bi bi-plus"></i>
+                      </div>
+                      <a href="shop-details.html">View Details</a>
+                    </div>
+                    <ul class="cart-icon-list">
+                      <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                      <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+                    </ul>
+                  </div>
+                  <div class="collection-content">
+                    <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
+                    <div class="price">
+                      <h6>$25.00</h6>
+                      <del>$30.00</del>
+                    </div>
+                    <div class="review">
+                      <ul>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                      <span>(50)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="collection-card">
+                  <div class="collection-img">
+                    <%= image_tag "bg/category/h3-collection-02.png" %>
+                    <div class="view-dt-btn">
+                      <div class="plus-icon">
+                        <i class="bi bi-plus"></i>
+                      </div>
+                      <a href="shop-details.html">View Details</a>
+                    </div>
+                    <ul class="cart-icon-list">
+                      <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                      <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+                    </ul>
+                  </div>
+                  <div class="collection-content">
+                    <h4><a href="shop-details.html">Friskies Kitten Discoveries.</a></h4>
+                    <div class="price">
+                      <h6>$39.00</h6>
+                      <del>$39.00</del>
+                    </div>
+                    <div class="review">
+                      <ul>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                      <span>(50)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="collection-card">
+                  <div class="offer-card sale">
+                    <span>Hot Sale</span>
+                  </div>
+                  <div class="collection-img">
+                    <%= image_tag "bg/category/h3-collection-03.png" %>
+                    <div class="view-dt-btn">
+                      <div class="plus-icon">
+                        <i class="bi bi-plus"></i>
+                      </div>
+                      <a href="shop-details.html">View Details</a>
+                    </div>
+                    <ul class="cart-icon-list">
+                      <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                      <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+                    </ul>
+                  </div>
+                  <div class="collection-content">
+                    <h4><a href="shop-details.html">Joules Cat Cotton House.</a></h4>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <del>$200.00</del>
+                    </div>
+                    <div class="review">
+                      <ul>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                      <span>(50)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="collection-card">
+                  <div class="collection-img">
+                    <%= image_tag "bg/category/h3-collection-04.png" %>
+                    <div class="view-dt-btn">
+                      <div class="plus-icon">
+                        <i class="bi bi-plus"></i>
+                      </div>
+                      <a href="shop-details.html">View Details</a>
+                    </div>
+                    <ul class="cart-icon-list">
+                      <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                      <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+                    </ul>
+                  </div>
+                  <div class="collection-content">
+                    <h4><a href="shop-details.html">Natural Dog Fresh Food.</a></h4>
+                    <div class="price">
+                      <h6>$18.00</h6>
+                      <del>$30.00</del>
+                    </div>
+                    <div class="review">
+                      <ul>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                      <span>(50)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="collection-card">
+                  <div class="offer-card sold-out">
+                    <span>Sold Out</span>
+                  </div>
+                  <div class="collection-img">
+                    <%= image_tag "bg/category/h3-collection-07.png" %>
+                    <div class="view-dt-btn">
+                      <div class="plus-icon">
+                        <i class="bi bi-plus"></i>
+                      </div>
+                      <a href="shop-details.html">View Details</a>
+                    </div>
+                    <ul class="cart-icon-list">
+                      <li><a href="cart.html"><%= image_tag "icon/Icon-cart3.svg" %></a></li>
+                      <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+                    </ul>
+                  </div>
+                  <div class="collection-content">
+                    <h4><a href="shop-details.html">Rooibos Pet Food Supple</a></h4>
+                    <div class="price">
+                      <h6>$75.00</h6>
+                      <del>$80.00</del>
+                    </div>
+                    <div class="review">
+                      <ul>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                        <li><i class="bi bi-star-fill"></i></li>
+                      </ul>
+                      <span>(50)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3 Essential Items End============= -->
+  <!-- ========== Home3 Offer Banner Start============= -->
+  <div class="offer-banner-area mb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-6 col-sm-8">
+          <div class="offer-banner-card">
+            <div class="offer-img d-lg-none d-flex justify-content-center">
+              <%= image_tag "bg/offer-img-31.png" %>
+            </div>
+            <div class="offer-content">
+              <h4><a href="#">All Natural Cat Food Package </a></h4>
+              <div class="price">
+                <h6>$25.00</h6>
+                <del>$30.00</del>
+              </div>
+            </div>
+            <div class="offer-img d-lg-block d-none">
+              <%= image_tag "bg/offer-img-31.png" %>
+            </div>
+            <div class="offer-right">
+              <div class="offer-tag  d-lg-none d-flex justify-content-center">
+                <h3>50%<span>Off</span></h3>
+              </div>
+              <a class="primary-btn6" href="shop.html">Shop Now</a>
+              <div class="offer-tag d-lg-flex d-none">
+                <h3>50%<br><span>Off</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3 Offer Banner End============= -->
+  <!-- ========== Home3 Testimonial Start============= -->
+  <div class="home3-testimonial-area mb-120">
+    <div class="container">
+      <div class="row mb-60">
+        <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="section-title3">
+            <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Customers Think About Us</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
+          </div>
+          <div class="slider-btn-wrap">
+            <div class="slider-btn prev-btn-12">
+              <i class="bi bi-arrow-left"></i>
+            </div>
+            <div class="slider-btn next-btn-12">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xxl-11">
+          <div class="swiper h3-testimonil-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-wrapper">
+                  <div class="review">
+                    <ul>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                    </ul>
+                  </div>
+                  <p>Pellentesque maximus augue orci, quis congue puru
+                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                  <div class="author-area">
+                    <div class="author-img">
+                      <%= image_tag "bg/h3-autho-1.png" %>
+                    </div>
+                    <div class="author-name-deg">
+                      <h3>Sebastian Ethan</h3>
+                      <span>Customer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-wrapper">
+                  <div class="review">
+                    <ul>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                    </ul>
+                  </div>
+                  <p>Pellentesque maximus augue orci, quis congue puru
+                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                  <div class="author-area">
+                    <div class="author-img">
+                      <%= image_tag "bg/h3-autho-2.png" %>
+                    </div>
+                    <div class="author-name-deg">
+                      <h3>Lokand Donark</h3>
+                      <span>Customer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-wrapper">
+                  <div class="review">
+                    <ul>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                      <li><i class="bi bi-star-fill"></i></li>
+                    </ul>
+                  </div>
+                  <p>Pellentesque maximus augue orci, quis congue puru
+                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                  <div class="author-area">
+                    <div class="author-img">
+                      <%= image_tag "bg/h3-autho-3.png" %>
+                    </div>
+                    <div class="author-name-deg">
+                      <h3>Angelina Gushe</h3>
+                      <span>Customer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3 Testimonial End============= -->
+  <!-- ========== Home3 Newsletter Start============= -->
+  <div class="home3-newsletter-area mb-120">
+    <div class="newsletter-img">
+      <%= image_tag "bg/h3-newsletter-img.png" %>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="newsletter-wrap">
+            <div class="section-title3 mb-40">
+              <span>Get In Touch</span>
+              <h2>Let’s Connect Our Newsletter</h2>
+            </div>
+            <form>
+              <div class="form-inner">
+                <input type="text" placeholder="Type Your Email">
+                <button type="submit">Connect</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3  Newsletter End============= -->
+
+  <!-- ========== Home3 Blog End============= -->
+  <div class="home3-blog-area mb-120">
+    <div class="container">
+      <div class="row mb-60">
+        <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="section-title3">
+            <h2><%= image_tag "icon/h3-sec-tt-vect-left.svg" %><span>Our Latest Articles</span><%= image_tag "icon/h3-sec-tt-vect-right.svg" %></h2>
+          </div>
+          <div class="h3-view-btn d-md-flex d-none">
+            <a href="blog-grid.html">View All Blog<%= image_tag "icon/haf-button-2.svg" %></a>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-10">
+          <div class="blog-card3">
+            <div class="blog-img">
+              <%= image_tag "blog/blog7.png" %>
+            </div>
+            <div class="bolg-content">
+              <div class="cetagoty">
+                <a href="blog-grid.html">Dog bording</a>
+              </div>
+              <div class="blog-meta">
+                <ul>
+                  <li><a href="blog-grid.html">Angunel John</a></li>
+                  <li><a href="blog-grid.html">August 13, 2022</a></li>
+                </ul>
+              </div>
+              <h4><a href="blog-details.html">lobortis pharetra In necat boi risus osan that one far fox.</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10">
+          <div class="blog-card3">
+            <div class="blog-img">
+              <%= image_tag "blog/blog8.png" %>
+            </div>
+            <div class="bolg-content">
+              <div class="cetagoty">
+                <a href="blog-grid.html">Dog bording</a>
+              </div>
+              <div class="blog-meta">
+                <ul>
+                  <li><a href="blog-grid.html">Angunel John</a></li>
+                  <li><a href="blog-grid.html">August 13, 2022</a></li>
+                </ul>
+              </div>
+              <h4><a href="blog-details.html">Vestibulum eget risus ut est Proina ullamcorper aliquet.</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10">
+          <div class="blog-card3">
+            <div class="blog-img">
+              <%= image_tag "blog/blog9.png" %>
+            </div>
+            <div class="bolg-content">
+              <div class="cetagoty">
+                <a href="blog-grid.html">Dog bording</a>
+              </div>
+              <div class="blog-meta">
+                <ul>
+                  <li><a href="blog-grid.html">Angunel John</a></li>
+                  <li><a href="blog-grid.html">August 13, 2022</a></li>
+                </ul>
+              </div>
+              <h4><a href="blog-details.html">Mauris semper mauris eget aliquet dictum diam mauris.</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-md-none d-block pt-30">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div class="h3-view-btn">
+            <a href="shop.html">View All Product<%= image_tag "icon/haf-button-2.svg" %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Home3 Blog End============= -->
+<% end %>

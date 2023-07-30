@@ -7,15 +7,26 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application" %>
   </head>
 
-  <body class="home-pages-2">
-    <%= render "layouts/header" %>
-    <%= render partial: "shared/notifications", locals: {message: flash[:notice] || flash[:alert]} %>
-    <%= yield %>
-  <%= render "layouts/footer" %>
-
+  <body class="<%= current_user&.has_role?(:admin) && check_admin_layout ? '' : 'home-pages-2' %>">
+    <% if current_user&.has_role?(:admin) && check_admin_layout %>
+      <div class="main-wrapper" id="main-wrapper">
+        <%= render "layouts/header_admin" %>
+        <%= render "layouts/left_side_bar" %>
+        <%= render partial: "shared/notifications_admin", locals: { message: flash[:notice] || flash[:alert] } %>
+        <div class="page-wrapper">
+        <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= render "layouts/header" %>
+      <%= render partial: "shared/notifications", locals: { message: flash[:notice] || flash[:alert] } %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    <% end %>
   </body>
 </html>
