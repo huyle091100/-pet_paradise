@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">Add new User</h5>
+          <%= form_with(model: User.new) do |form| %>
+            <div class="row email-repeater">
+              <div data-repeater-list="repeater-group">
+                <div data-repeater-item>
+                  <div class="input-field col s10">
+  <!--                  <input id="email" type="email">-->
+                    <%= form.email_field :email %>
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="input-field col s2">
+                    <button data-repeater-delete="" class="btn red waves-effect waves-light" type="button"><i class="material-icons">clear</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button type="button" data-repeater-create="" class="btn teal waves-effect waves-light m-l-10">Add Email
+              </button>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= form.select :role, ["user", "staff"].map{|x| x.humanize} %>
+                <label for="role">Role</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">Or import file (excel)</h5>
+          <%= form_with(url: import_users_path, local: true, multipart: true) do |form| %>
+            <div class="row">
+              <div class="input-field col s10">
+                <div class="file-field input-field">
+                  <div class="btn cyan">
+                    <span>File</span>
+                    <%= form.file_field :file, accept: '.xlsx' %>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Choose File Here">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

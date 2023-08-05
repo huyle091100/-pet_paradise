@@ -99,6 +99,9 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
+    creek (2.6.3)
+      nokogiri (>= 1.10.0)
+      rubyzip (>= 1.0.0)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -219,6 +222,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rolify (6.0.1)
+    rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -282,6 +286,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-sidekiq
   capistrano3-puma
+  creek
   debug
   devise
   font-awesome-sass
