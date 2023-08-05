@@ -51,6 +51,7 @@
               <div class="message-center">
                 <!-- Message -->
                 <% @chat.each do |chat| %>
+                  <% next if chat.chat_messages.blank? %>
                   <a href="#" id="open-chat-<%= chat.id %>" onclick="toggleChat(<%= chat.id %>)">
                                                 <span class="user-img">
                                                   <%= image_tag "users/1.jpg", class: "circle" %>
