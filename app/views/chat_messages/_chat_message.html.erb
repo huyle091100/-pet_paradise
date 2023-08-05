@@ -1,0 +1,6 @@
+<li class="msg_<%= chat_message.user_id == current_user.id ? "sender" : "receiver" %>">
+  <div class="chat-content">
+    <div class="box bg-light-info"><%= chat_message.message %></div>
+  </div>
+  <div class="chat-time"><%= chat_message.created_at.in_time_zone("Asia/Ho_Chi_Minh").strftime("%H:%M") %></div>
+</li>

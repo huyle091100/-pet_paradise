@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :chats
+  resources :chat_messages
   resources :products
   resources :users do
     collection do
