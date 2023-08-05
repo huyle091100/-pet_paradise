@@ -156,7 +156,7 @@
             </button>
           </form>
         </li>
-        <li><a href="#">
+        <li><a href="#" id="open-chat-<%= @chat.first.id %>" onclick="toggleChat(<%= @chat.first.id %>)">
           <svg width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M12.4147 1.51371C11.0037 0.302997 8.92573 0.534835 7.61736 1.87434L7.12993 2.38954L6.61684 1.87434C5.33413 0.534835 3.23047 0.302997 1.81948 1.51371C0.203258 2.90473 0.126295 5.37767 1.56294 6.87174L6.53988 12.0237C6.84773 12.3586 7.38647 12.3586 7.69433 12.0237L12.6713 6.87174C14.1079 5.37767 14.0309 2.90473 12.4147 1.51371Z" />
@@ -187,4 +187,117 @@
     </div>
   </div>
 </header>
+<style>
+    .chat-windows {
+        position: fixed;
+        bottom: 0px;
+        right: 300px;
+        height: 350px;
+        max-height: 350px;
+        z-index: 9999;
+        transition: 600ms;
+    }
+    .chat-windows .user-chat {
+        min-width: 300px;
+        min-height: 350px;
+        background-color: #fff;
+        float: right;
+        margin: 0 2px 0 0;
+    }
+    .chat-windows .user-chat .chat-head {
+        height: 40px;
+        padding: 10px;
+        background-color: #2962FF;
+        color: #fff;
+        position: relative;
+    }
+    .chat-windows .user-chat .chat-body {
+        height: 270px;
+        padding: 15px 15px 0;
+        background-color: #fff;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 300px;
+        position: relative;
+    }
+
+    .chat-windows .user-chat .chat-footer {
+        padding: 0px 15px;
+        border-top: 1px solid rgba(120, 130, 140, 0.13);
+    }
+
+    .chat-windows .user-chat .chat-head img {
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        vertical-align: middle;
+        margin: -4px 8px 0 0;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .chat-windows .user-chat .chat-body .chat-list {
+        padding-left: 0;
+    }
+    .chat-windows .user-chat .chat-body .chat-list li {
+        margin-top: 10px;
+    }
+    .chat-windows .user-chat .chat-body .chat-list li .chat-content {
+        padding-left: 0;
+    }
+    .chat-list li .chat-content {
+        width: calc(100% - 50px);
+        display: inline-block;
+    }
+    .chat-list li .chat-content .box {
+        display: inline-block;
+        padding: 10px;
+        margin-bottom: 3px;
+        /*color: #343a40;*/
+        background: #2962FF;
+    }
+    .chat-list li .chat-time {
+        display: block;
+        font-size: 10px;
+        color: #4F5467;
+    }
+
+    .chat-list li.odd .chat-content {
+        text-align: right;
+        width: calc(100% - 0px);
+        display: inline-block;
+    }
+    .chat-list li.odd .chat-time {
+        text-align: right;
+    }
+    .chat-list li.odd .box {
+        clear: both;
+        color: #fff;
+        background: #2962FF;
+    }
+    .chat-windows .user-chat .chat-body .chat-list li .chat-content {
+        padding-left: 0;
+    }
+    .chat-windows .user-chat .chat-footer {
+        padding: 0px 15px;
+        border-top: 1px solid rgba(120, 130, 140, 0.13);
+    }
+    .chat-windows .user-chat .chat-footer .form-control {
+        background-color: transparent;
+        color: #9098ac;
+        font-size: 14px;
+        border: 0px;
+        width: 100%;
+        height: 40px;
+        border-radius: 0;
+        outline: none;
+        margin: 0 0 8px 0;
+        padding: 0;
+        box-shadow: none;
+        box-sizing: content-box;
+        transition: box-shadow .3s, border .3s;
+        overflow: visible;
+        font-family: "Nunito Sans", sans-serif;
+        line-height: 1.15;
+    }
+</style>
 <!-- ========== header end============= -->

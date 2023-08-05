@@ -2,3 +2,30 @@
 @import "dist/css/pages/dashboard1";
 @import "dist/css/pages/data-table";
 @import "dist/css/toast/toastr.min";
+
+.chat-bubble {
+  display: none;
+}
+
+.chat-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-submit {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}

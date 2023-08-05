@@ -1,32 +1,149 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PetParadise</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+<head>
+  <title>PetParadise</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application", "data-turbo-track": "reload" %>
 
-    <%= javascript_importmap_tags current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application" %>
-  </head>
+  <%= javascript_importmap_tags current_user&.has_role?(:admin) && check_admin_layout ? "application2" : "application" %>
+  <style>
+      .msg_sender {
+          clear: both;
+          color: #fff;
+          display: inline-block;
+          padding: 0 10px 0;
+          margin-bottom: 3px;
+          text-align: right;
+          width: calc(100% - 0px);
 
-  <body class="<%= current_user&.has_role?(:admin) && check_admin_layout ? '' : 'home-pages-2' %>">
-    <% if current_user&.has_role?(:admin) && check_admin_layout %>
-      <div class="main-wrapper" id="main-wrapper">
-        <%= render "layouts/header_admin" %>
-        <%= render "layouts/left_side_bar" %>
-        <%= render partial: "shared/notifications_admin", locals: { message: flash[:notice] || flash[:alert] } %>
-        <div class="page-wrapper">
-        <%= yield %>
+
+      }
+      .msg_sender > .chat-content > .box {
+          background: #2962FF !important;
+          color: #fff !important;
+      }
+
+      .msg_receiver {
+          clear: both;
+          color: #fff;
+          display: inline-block;
+          padding: 0 10px 0;
+          margin-bottom: 3px;
+          text-align: left;
+          width: calc(100% - 0px);
+      }
+      .msg_receiver > .chat-content > .box {
+          background: #f8f9fa !important;
+          color: #343a40 !important;
+      }
+
+  </style>
+</head>
+
+<body class="<%= current_user&.has_role?(:admin) && check_admin_layout ? '' : 'home-pages-2' %>">
+<% if current_user&.has_role?(:admin) && check_admin_layout %>
+  <div class="main-wrapper" id="main-wrapper">
+    <%= render "layouts/header_admin" %>
+    <%= render "layouts/left_side_bar" %>
+    <%= render partial: "shared/notifications_admin", locals: { message: flash[:notice] || flash[:alert] } %>
+    <div class="page-wrapper">
+      <%= yield %>
+    </div>
+  </div>
+<% else %>
+  <%= render "layouts/header" %>
+  <%= render partial: "shared/notifications", locals: { message: flash[:notice] || flash[:alert] } %>
+  <%= yield %>
+  <%= render "layouts/footer" %>
+
+<% end %>
+<% if user_signed_in? %>
+    <div class="chat-windows show-chat">
+<% @chat.each do |chat| %>
+<!--      <div class="chat-bubble" id="chat-bubble-<%#= chat.id %>">-->
+      <div class="user-chat" id="user-chat<%= chat.id %>" data-user-id="<%= chat.id %>" style="display: none">
+        <div class="chat-head">
+          <span class="name"><%= current_user.has_role?(:admin) ? User.find_by(id: chat.sender_id).email.split("@").first : "Admin" %></span>
+        </div>
+        <div class="chat-body" id="chatbox-<%= chat.id %>">
+          <ul class="chat-list">
+            <div id="chat_messages">
+              <%= render chat.chat_messages %>
+            </div>
+          </ul>
+        </div>
+        <div class="chat-footer">
+          <!--        <form enctype="multipart/form-data" action="/chat_messages" accept-charset="UTF-8" method="post">-->
+          <!--          <input type="hidden" value="<%#= User.with_role(:admin).first.id %>" name="receiver_id">-->
+          <!--          <input type="text" data-user-id="1" placeholder="Type &amp; Enter" class="form-control">-->
+          <!--        </form>-->
+          <%= form_for ChatMessage.new, url: chat_messages_path, data: { turbo: true, remote: true, controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, html: { id: "chat_messages_#{chat.id}" }, method: :post do |f| %>
+            <%= f.hidden_field :receiver_id, value: chat.receiver_id %>
+            <%= f.hidden_field :sender_id, value: chat.sender_id %>
+            <%= f.text_field :message, class: "form-control", placeholder: "Type & Enter" %>
+            <button type="submit"><a><%= image_tag "icon/Icon-cart3.svg" %></a></button>
+          <% end %>
         </div>
       </div>
-    <% else %>
-      <%= render "layouts/header" %>
-      <%= render partial: "shared/notifications", locals: { message: flash[:notice] || flash[:alert] } %>
-      <%= yield %>
-      <%= render "layouts/footer" %>
-    <% end %>
-  </body>
+<!--      </div>-->
+    <script>
+
+        function scrollToBottom(chat_id) {
+            const chatbox = document.getElementById(`chatbox-${chat_id}`);
+            console.log(chatbox)
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        document.getElementById("open-chat-<%= chat.id %>").addEventListener("click", function () {
+            scrollToBottom(<%= chat.id %>);
+        })
+        // Add event listener to the form submission
+        document.getElementById("chat_messages_<%= chat.id %>").addEventListener("keyup", function (event) {
+            if (event.code === 'Enter') {
+                setTimeout(() => scrollToBottom(<%= chat.id %>), 100);
+            }
+            // Auto-scroll to the bottom after adding a new message
+        });
+
+        function toggleChat(chat_id) {
+            const chatBubble = document.getElementById(`user-chat${chat_id}`);
+            chatBubble.style.display = chatBubble.style.display === "block" ? "none" : "block";
+        }
+    </script>
+<% end %>
+    </div>
+
+<% end %>
+<%= content_tag(:div, "", data: {
+  controller: "chat",
+  chatId: current_user&.id
+}) %>
+</body>
 </html>
+<!--<script>-->
+
+<!--    function scrollToBottom() {-->
+<!--        const chatbox = document.getElementById("chatbox");-->
+<!--        chatbox.scrollTop = chatbox.scrollHeight;-->
+<!--    }-->
+
+<!--    document.getElementById("open-chat").addEventListener("click", function () {-->
+<!--        scrollToBottom();-->
+<!--    })-->
+<!--    // Add event listener to the form submission-->
+<!--    document.getElementById("chat_messages_xx").addEventListener("keyup", function (event) {-->
+<!--        if (event.code === 'Enter') {-->
+<!--            setTimeout(() => scrollToBottom(), 100);-->
+<!--        }-->
+<!--        // Auto-scroll to the bottom after adding a new message-->
+<!--    });-->
+
+<!--    function toggleChat() {-->
+<!--        const chatBubble = document.getElementById("chat-bubble");-->
+<!--        chatBubble.style.display = chatBubble.style.display === "block" ? "none" : "block";-->
+<!--    }-->
+<!--</script>-->

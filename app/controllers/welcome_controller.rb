@@ -2,7 +2,11 @@ class WelcomeController < ApplicationController
   include ActiveStorage::SetCurrent
 
   def index
-    @cart = 1
+    if current_user && current_user.has_role?(:admin)
+      redirect_to users_path
+    else
+      @cart = current_user ? current_user.carts.active.count : 0
+    end
   end
 
   def shop
