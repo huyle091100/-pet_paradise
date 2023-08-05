@@ -23,6 +23,7 @@ gem "cancan"
 gem "rolify"
 gem "rack-cors"
 gem "kaminari"
+gem "creek"
 
 group :development, :test do
   gem "pry"
