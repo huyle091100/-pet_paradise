@@ -6,6 +6,10 @@ class User < ApplicationRecord
   after_create_commit do
     create_chat
   end
+
+  after_destroy do
+    Chat.find_by(sender_id: self.id).destroy
+  end
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
