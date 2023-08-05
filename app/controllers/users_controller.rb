@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.where.not(id: current_user.id)
+  end
   def new
     @user = User.new
   end
@@ -34,7 +38,7 @@ class UsersController < ApplicationController
       user = User.new(email: row_values.first, password: random_password)
       user.skip_confirmation!
       if user.save
-        user.add_role row_values.last&.downcase&.to_sym
+        user.add_role ["admin", "staff"].include?(row_values.last&.downcase&.to_sym) ? row_values.last&.downcase&.to_sym : "user"
         user.send_reset_password_instructions
       else
         next
@@ -44,6 +48,15 @@ class UsersController < ApplicationController
     redirect_to users_path, notice: 'Excel file imported successfully.'
   rescue StandardError => e
     redirect_to users_path, alert: "Error importing Excel file: #{e.message}"
+  end
+
+  def destroy
+    User.find_by(id: params[:id]).destroy
+    flash[:notice] = "Delete user successfully."
+    # redirect_to "#{request.referer}##{params[:id]}"
+    respond_to do |format|
+      format.js { render js: "window.location.href = '/users';" }
+    end
   end
 
   private
