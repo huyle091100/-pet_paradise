@@ -64,6 +64,7 @@
 <% if user_signed_in? %>
     <div class="chat-windows show-chat">
 <% @chat.each do |chat| %>
+        <% next if chat.chat_messages.blank? %>
 <!--      <div class="chat-bubble" id="chat-bubble-<%#= chat.id %>">-->
       <div class="user-chat" id="user-chat<%= chat.id %>" data-user-id="<%= chat.id %>" style="display: none">
         <div class="chat-head">

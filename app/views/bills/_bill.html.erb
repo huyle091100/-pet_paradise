@@ -1,0 +1,8 @@
+<tr id="<%= dom_id bill %>">
+  <td><%= bill.order_info %></td>
+  <td><%= bill.order_id %></td>
+  <td><%= bill.amount %></td>
+  <td><%= bill.status.humanize %></td>
+  <td><%= bill.bill_products.count %></td>
+  <td><%= bill.response_time ? Time.at(bill.response_time/1000).in_time_zone("Asia/Ho_Chi_Minh").strftime("%H:%M %d-%m-%Y") : '' %></td>
+</tr>

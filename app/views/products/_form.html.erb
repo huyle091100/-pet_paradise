@@ -1,62 +1,58 @@
-<%= form_with(model: product, class: "contents") do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-        <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-inner">
-        <label>Name *</label>
-        <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-inner">
-        <label>Price *</label>
-        <%= form.number_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
-      </div>
-      <div class="form-inner">
-        <label>Quantity *</label>
-        <%= form.number_field :quantity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", min: 1, required: true %>
-      </div>
-      <div class="form-inner" style="margin-bottom: 50px">
-        <label>Category *</label><br/>
-        <%= form.select :category, Product.categories.keys.map{|type| [type.humanize, type]}, {}, {class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"} %>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="col-md-12">
-        <div class="form-inner">
-          <label>Image</label>
-          <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full uploadFile", accept:'image/*' %>
-          <div class="imagePreview"></div>
+<style>
+.imagePreview{
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+  margin-top: 30px;
+  height: 200px;
+}
+</style>
+      <div class="card" style="height: 650px">
+        <div class="card-content">
+          <%= form_with(model: product, class: "contents") do |form| %>
+            <% if product.errors.any? %>
+              <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+                <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+                <ul>
+                  <% product.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col s12" style="margin-bottom: 20px">
+                  <label>Name *</label>
+                  <%= form.text_field :name, required: true %>
+              </div>
+              <div class="col s4" style="margin-bottom: 20px">
+                  <label>Price *</label>
+                  <%= form.number_field :price, min: 1, required: true %>
+              </div>
+              <div class="col s4" style="margin-bottom: 20px">
+                  <label>Quantity *</label>
+                  <%= form.number_field :quantity, min: 1, required: true %>
+              </div>
+              <div class="col s4" style="margin-bottom: 20px">
+                  <label>Category *</label>
+                  <%= form.select :category, Product.categories.keys.map{|type| [type.humanize, type]}, include_blank: true %>
+              </div>
+              <div class="col s6 imageX">
+                  <label class="col s12" style="margin-bottom: 20px">Image</label>
+                  <%= form.file_field :image, class: "uploadFile", accept:'image/*' %>
+                  <div class="imagePreview"></div>
+              </div>
+              <div class="col s6">
+                <label>Description</label>
+                <%= form.text_area :description, rows: 4, cols: 5, style: "height: 19rem" %>
+              </div>
+            </div>
+            <br/>
+            <button class="btn cyan waves-effect waves-light right" type="submit">Submit</button>
+          <% end %>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-inner">
-        <label>Description</label>
-        <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-      </div>
-    </div>
-  </div>
-
-  <button class="account-btn" type="submit">Submit</button>
-<% end %>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
     jQuery(function($) {
@@ -73,9 +69,27 @@
 
                 reader.onloadend = function(){ // set image data as background of div
                     //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-                    uploadFile.closest(".form-inner").find('.imagePreview').css("background-image", "url("+this.result+")");
+                    uploadFile.closest(".imageX").find('.imagePreview').css("background-image", "url("+this.result+")");
                 }
             }
+
+        });
+        $(document).ready( function()
+        {
+            // var uploadFile = $(this);
+            // var files = !!this.files ? this.files : [];
+            // if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+            console.log("<%= product.image_url ? product.image_url : '' %>")
+
+            // if (/^image/.test( files[0].type)){ // only image file
+            //     var reader = new FileReader(); // instance of the FileReader
+            //     reader.readAsDataURL(files[0]); // read the local file
+
+            //     reader.onloadend = function(){ // set image data as background of div
+            //         //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                    document.getElementsByClassName('imagePreview')[0].style.backgroundImage = "url(<%= product.image_url ? product.image_url : '' %>)";
+            //     }
+            // }
 
         });
     });
