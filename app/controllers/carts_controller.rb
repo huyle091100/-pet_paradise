@@ -5,7 +5,7 @@ class CartsController < ApplicationController
   before_action :set_product, only: [:create, :update_quantity]
   before_action :total, only: [:index, :checkout]
   def index
-    products = current_user.carts.group(:product_id).count.keys
+    products = current_user.carts.active.group(:product_id).count.keys
     @carts = Product.where(id: products)
   end
 
@@ -47,7 +47,7 @@ class CartsController < ApplicationController
   end
 
   def checkout
-    momo = Momo::GetPaymentUrlService.call({user: current_user, amount: @total})
+    momo = Momo::GetPaymentUrlService.call({user: current_user, amount: @total, carts: @carts})
     if momo["resultCode"] == 0
       redirect_to momo["payUrl"], allow_other_host: true
     else
@@ -63,6 +63,7 @@ class CartsController < ApplicationController
   end
 
   def total
+    @carts = current_user.carts
     @total = 0
     current_user.carts.active.includes(:product).each do |l_prod|
       @total += l_prod.product.price

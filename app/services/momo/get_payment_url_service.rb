@@ -6,6 +6,9 @@ class Momo::GetPaymentUrlService < ApplicationService
   def initialize args = {}
     @user = args[:user]
     @amount = args[:amount]
+    @carts = args[:carts]
+    @data_cart = carts.group(:product_id).count(:product_id)
+    @products = Product.where(id: data_cart.keys)
   end
 
   def call
@@ -13,7 +16,7 @@ class Momo::GetPaymentUrlService < ApplicationService
     extra_data = Base64.encode64(JSON.dump({orderId: "MM2023_#{user.id}_#{random_token}"}))
     order_id = "MM2023_#{user.id}_#{random_token}"
     request_id = "MM2023-#{user.id}-#{random_token}"
-    text_to_sha = "accessKey=7tYPQ3NQMFtdtTdE&amount=#{amount}&extraData=#{extra_data}&ipnUrl=#{Rails.application.secrets.dig(:assets_host)}&orderId=#{order_id}&orderInfo=#{user.email}&partnerCode=MOMOVEIT20200928&redirectUrl=#{Rails.application.secrets.dig(:assets_host)}&requestId=#{request_id}&requestType=captureWallet"
+    text_to_sha = "accessKey=7tYPQ3NQMFtdtTdE&amount=#{amount}&extraData=#{extra_data}&ipnUrl=#{Rails.application.secrets.dig(:assets_host)}/api/v1/bills&orderId=#{order_id}&orderInfo=#{user.email}&partnerCode=MOMOVEIT20200928&redirectUrl=#{Rails.application.secrets.dig(:assets_host)}&requestId=#{request_id}&requestType=captureWallet"
     digest = OpenSSL::Digest.new('sha256')
     hmac = OpenSSL::HMAC.hexdigest(digest, 'akzjoOpoNooEjYqahEveiV8n2iOIzlBr', text_to_sha)
     data_body = {
@@ -21,7 +24,7 @@ class Momo::GetPaymentUrlService < ApplicationService
       storeName: "Pet Paradise",
       storeId: "MoMoTestStore",
       requestType: "captureWallet",
-      ipnUrl: Rails.application.secrets.dig(:assets_host),
+      ipnUrl: "#{Rails.application.secrets.dig(:assets_host)}/api/v1/bills",
       redirectUrl: Rails.application.secrets.dig(:assets_host),
       orderId: order_id,
       amount: amount,
@@ -29,7 +32,8 @@ class Momo::GetPaymentUrlService < ApplicationService
       orderInfo: user.email,
       requestId: "MM2023-#{user.id}-#{random_token}",
       extraData: extra_data,
-      signature: hmac
+      signature: hmac,
+      items: items
     }
     url = URI("https://test-payment.momo.vn/v2/gateway/api/create")
     https = Net::HTTP.new(url.host, url.port)
@@ -39,14 +43,26 @@ class Momo::GetPaymentUrlService < ApplicationService
     request["Content-Type"] = "application/json"
     request.body = JSON.dump(data_body)
     response = https.request(request)
+
+    if JSON.parse(response.body)["resultCode"] == 0
+      bill = Bill.create order_id: order_id, amount: amount, order_info: user.email, status: :unpaid
+      products.each do |product|
+        bill.bill_products.create product_id: product.id, name: product.name, quantity: data_cart[product.id], total_amount: product.price * data_cart[product.id]
+      end
+      carts.update_all status: :inactive
+    end
     JSON.parse(response.body)
   end
 
   private
 
   def items
-
+    items = []
+    products.each do |product|
+      items << {id: SecureRandom.hex(5), name: product.name, currency: "VND", quantity: data_cart[product.id], totalAmount: product.price * data_cart[product.id], purchaseAmount: product.price * data_cart[product.id]}
+    end
+    items
   end
 
-  attr_reader :user, :amount
+  attr_reader :user, :amount, :carts, :products, :data_cart
 end
