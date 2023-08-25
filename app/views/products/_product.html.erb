@@ -5,4 +5,12 @@
   <td><%= image_tag product.image_url ? product.image_url : '', style: "height: 100px; object-fit: contain" %></td>
   <td><%= product.quantity %></td>
   <td><%= product.category %></td>
+  <td>
+    <%= link_to edit_product_path(product) do %>
+      <i class="material-icons">edit</i><span class="hide-menu"></span>
+    <% end %>
+    <%= link_to product_path(product), data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+      <i class="material-icons">delete</i><span class="hide-menu"></span>
+    <% end %>
+  </td>
 </tr>

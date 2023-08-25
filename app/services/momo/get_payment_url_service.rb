@@ -45,7 +45,7 @@ class Momo::GetPaymentUrlService < ApplicationService
     response = https.request(request)
 
     if JSON.parse(response.body)["resultCode"] == 0
-      bill = Bill.create order_id: order_id, amount: amount, order_info: user.email, status: :unpaid
+      bill = Bill.create order_id: order_id, amount: amount, order_info: user.email, status: :unpaid, user_id: user.id
       products.each do |product|
         bill.bill_products.create product_id: product.id, name: product.name, quantity: data_cart[product.id], total_amount: product.price * data_cart[product.id]
       end

@@ -5,12 +5,16 @@
     </div>
     <div class="collection-img">
       <img class="img-gluid" src="<%= product.image_url %>" alt="" style="height: 168px;object-fit: contain;">
-      <div class="view-dt-btn">
+      <%
+=begin%>
+ <div class="view-dt-btn">
         <div class="plus-icon">
           <i class="bi bi-plus"></i>
         </div>
-        <a href="shop-details.html">View Details</a>
-      </div>
+        <a href="#">View Details</a>
+      </div> 
+<%
+=end%>
       <ul class="cart-icon-list">
         <li>
           <%= form_for Cart.new, url: carts_path, data: { turbo: true }, html: {id: "add_to_cart_#{product.id}"}, method: :post do |f| %>
@@ -22,16 +26,21 @@
           <%#= image_tag "icon/Icon-cart3.svg" %>
 <!--          </a>-->
         </li>
-        <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li>
+        <%
+=begin%>
+ <li><a href="#"><%= image_tag "icon/Icon-favorites3.svg" %></a></li> 
+<%
+=end%>
       </ul>
     </div>
     <div class="collection-content text-center">
-      <h4><a href="shop-details.html">Whiskas Cat Food Core Tuna</a></h4>
+      <h4><a href="#"><%= product.name %></a></h4>
       <div class="price">
-        <h6>$25.00</h6>
-        <del>$30.00</del>
+        <h6><%= product.price%></h6>
       </div>
-      <div class="review">
+      <%
+=begin%>
+ <div class="review">
         <ul>
           <li><i class="bi bi-star-fill"></i></li>
           <li><i class="bi bi-star-fill"></i></li>
@@ -40,7 +49,9 @@
           <li><i class="bi bi-star-fill"></i></li>
         </ul>
         <span>(50)</span>
-      </div>
+      </div> 
+<%
+=end%>
     </div>
   </div>
 </div>

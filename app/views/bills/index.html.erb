@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h5 class="card-title">Bills</h5>
+        <table class="responsive-table datatable-select-inputs">
+          <thead>
+          <tr>
+            <th style="width: 15%">Buyer</th>
+            <th style="width: 30%">Order Id</th>
+            <th style="width: 15%">Amount</th>
+            <th style="width: 20%">Status</th>
+            <th style="width: 10%">Quantity</th>
+            <th style="width: 10%">Pay at</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%= render @bills %>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

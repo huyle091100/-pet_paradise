@@ -24,6 +24,7 @@ gem "rolify"
 gem "rack-cors"
 gem "kaminari"
 gem "creek"
+gem "dotenv-rails"
 
 group :development, :test do
   gem "pry"
