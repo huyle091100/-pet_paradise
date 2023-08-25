@@ -16,6 +16,9 @@ Rails.application.configure do
 
   # Enable server timing
   config.server_timing = true
+  config.action_cable.url = "ws://103.45.234.160/cable"
+  #  config.action_cable.url = [/ws:\/\/*/, /wss:\/\/*/]
+  config.action_cable.allowed_request_origins = [ 'http://103.45.234.160' ]
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
