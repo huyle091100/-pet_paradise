@@ -16,9 +16,10 @@ Rails.application.configure do
 
   # Enable server timing
   config.server_timing = true
-  config.action_cable.url = "ws://103.45.234.160/cable"
+  config.action_cable.url = "ws://pet-paradise.site/cable"
+  config.hosts << "pet-paradise.site"
   #  config.action_cable.url = [/ws:\/\/*/, /wss:\/\/*/]
-  config.action_cable.allowed_request_origins = [ 'http://103.45.234.160' ]
+  config.action_cable.allowed_request_origins = [ 'http://pet-paradise.site' ]
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -49,11 +50,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'pet-paradise.site' }
   config.action_mailer.smtp_settings = {
-    user_name:      'taylqmail@gmail.com',
-    password:       'tllmtehvgrezahsz',
-    domain:         'localhost:3000',
+    user_name:      'petparadise2k1@gmail.com',
+    password:       'lwzrmiirzafqlqlp',
+    domain:         'pet-paradise.site',
     address:       'smtp.gmail.com',
     port:          '587',
     authentication: :plain,
