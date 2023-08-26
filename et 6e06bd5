@@ -1,0 +1,55 @@
+[33mdf9c5b3[m[33m ([m[1;36mHEAD -> [m[1;32mpay-in-cash[m[33m, [m[1;31morigin/pay-in-cash[m[33m)[m Payment in cash
+[33m6e06bd5[m Merge pull request #24 from taylq/manage-booking-detail
+[33mc756805[m manage booking detail and cancel booking
+[33md2b0003[m Merge pull request #23 from taylq/fix-homepage
+[33m666a8d5[m fix homepage
+[33m1ab5a1b[m Merge pull request #22 from taylq/view-booking
+[33mc984d15[m view booking
+[33mdabc42d[m Merge pull request #21 from taylq/booking-room
+[33m7454bab[m booking
+[33mb884199[m Merge pull request #20 from taylq/manage-booking
+[33m66b1de3[m manage-booking
+[33m73ece28[m Merge pull request #19 from taylq/view-history-payment
+[33m9f58264[m view history payment
+[33m1c3397e[m Merge pull request #18 from taylq/user_authorization
+[33me88ab34[m authorization
+[33me381a9c[m Merge pull request #17 from taylq/update-my-profile
+[33m6a80986[m Update My profile
+[33mec32f01[m Merge pull request #16 from taylq/list-bill
+[33m19e8457[m list bill
+[33m3f766c5[m Merge pull request #15 from taylq/edit-product
+[33mc2c6fe4[m edit product
+[33mdb378c3[m Merge pull request #14 from taylq/add_bill
+[33m98e38a3[m[33m ([m[1;31morigin/add_bill[m[33m)[m add bill
+[33m4152569[m fix deploy
+[33maddf310[m Merge pull request #13 from taylq/fix-add-to-cart
+[33m0597d74[m fix add to cart
+[33m221200f[m Merge pull request #12 from taylq/fix-chat-to-deploy
+[33m58ea62b[m[33m ([m[1;31morigin/fix-chat-to-deploy[m[33m)[m fix chat to deploy
+[33m7b3ee01[m Merge pull request #11 from taylq/chat-with-admin
+[33mfc894ef[m chat with admin
+[33m235441c[m Merge pull request #10 from taylq/list-user
+[33m19748d2[m list users
+[33md658de2[m Merge pull request #9 from taylq/add-user
+[33mf2349d2[m add user
+[33m4ddacfd[m Merge pull request #8 from taylq/add-admin-layout
+[33mc5ff1e4[m add admin layout
+[33m30b6606[m fix sidekiq
+[33mb3a4b49[m config sidekiq sv
+[33mee6b283[m fix deploy
+[33m697e008[m fix deploy
+[33mf68d7e1[m fix deploy
+[33m50e25a5[m fix deploy
+[33mdf130ce[m Merge pull request #7 from taylq/deploy
+[33m61e247c[m deploy
+[33md26a21b[m Merge pull request #6 from taylq/payment-momo
+[33m9db1d46[m add payment with momo
+[33ma6498db[m Merge pull request #5 from taylq/add-to-cart
+[33m7bdb5e6[m add to cart
+[33md3fafa2[m Merge pull request #4 from taylq/CRUD-products
+[33md9b7b44[m[33m ([m[1;31morigin/CRUD-products[m[33m)[m CRUD product without layout
+[33me17b7a5[m Merge pull request #3 from taylq/login-logout
+[33m570f3bd[m login-register
+[33m37b39ca[m Merge pull request #2 from taylq/add-layout
+[33m7aa0c31[m add layout
+[33meb34241[m init project

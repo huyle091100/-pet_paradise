@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   include ActiveStorage::SetCurrent
 
   before_action :set_product, only: [:create, :update_quantity]
-  before_action :total, only: [:index, :checkout_momo, :checkout]
+  before_action :total, only: [:index, :checkout_momo, :checkout, :cash]
   def index
     products = current_user.carts.active.group(:product_id).count.keys
     @carts = Product.where(id: products)
@@ -67,6 +67,21 @@ class CartsController < ApplicationController
       carts.update_all status: :inactive
       flash[:notice] = "Remove cart successfully!"
       redirect_to carts_path
+  end
+
+  def cash
+    random_token = SecureRandom.hex(10)
+    carts = current_user.carts
+    data_cart = carts.active.group(:product_id).count(:product_id)
+    products = Product.where(id: data_cart.keys)
+    bill = Bill.create order_id: "Cash_#{random_token}", amount: @total, order_info: current_user.email, status: :cash, user_id: current_user.id, 
+      first_name: current_user.first_name, last_name: current_user.last_name, address: current_user.address, phone_number: current_user.phone_number
+    products.each do |product|
+      bill.bill_products.create product_id: product.id, name: product.name, quantity: data_cart[product.id], total_amount: product.price * data_cart[product.id]
+    end
+    current_user.carts.update_all status: :inactive
+    flash[:notice] = "Payment in cash successfully!"
+    redirect_to shop_path
   end
 
   private

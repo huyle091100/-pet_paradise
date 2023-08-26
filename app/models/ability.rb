@@ -8,7 +8,13 @@ class Ability
       if user.has_role? :admin
         can :manage, :all
       elsif user.has_role? :staff
-        can :manage, :all
+        can :manage, Cart
+        can :manage, ChatMessage
+        can :manage, Chat
+        can :manage, Bill
+        cannot :manage, Room
+        can :manage, User
+        can :manage, Booking
       else
         can :manage, Cart
         can :manage, ChatMessage

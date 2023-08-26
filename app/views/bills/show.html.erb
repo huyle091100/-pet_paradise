@@ -3,9 +3,26 @@
     <div class="card">
       <div class="card-content">
         <h5 class="card-title">Bill Detail</h5>
-        <p>Buyer: <%= "#{@bill.user.first_name} #{@bill.user.last_name}" %></p>
+        <div class="row">
+          <div class="col s6">
+            <p>Buyer: <%= "#{@bill.user&.first_name} #{@bill.user&.last_name}" %></p>
         <p>Shipping address: <%= @bill.address %></p>
         <p>Phone number: <%= @bill.phone_number %></p>
+          </div>
+          <div class="col s6">
+            <div class="bill-status-<%= @bill.status %>">
+              <%= @bill.status.humanize %>
+            </div>  
+            <br/>
+            <% if @bill.is_shipped %>
+              <i class="material-icons" style="color: #198754;">check_circle</i><span class="hide-menu" style="color: #198754;">Shipped</span>
+            <% else %>
+              <%= link_to bill_path(@bill), data: { turbo: true, turbo_method: :put} do %>
+                <i class="material-icons">check_circle</i><span class="hide-menu">Mark as shipped</span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
         <table class="responsive-table datatable-select-inputs">
           <thead>
           <tr>
