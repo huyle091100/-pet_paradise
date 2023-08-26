@@ -132,7 +132,7 @@
               </ul>
             </div>
             <div class="collection-content text-center">
-              <h4><a href="shop-details.html"><%= product.name%></a></h4>
+              <h4><a href="<%= shop_detail_path(product.id)%>"><%= product.name%></a></h4>
               <div class="price">
                 <h6><%= number_to_currency(product.price,
                   unit: "VND", format: "%n %u", precision: 0) %></h6>
