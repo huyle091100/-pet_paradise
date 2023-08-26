@@ -23,7 +23,7 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <%= form.select :role, ["user", "staff"].map{|x| x.humanize} %>
+                <%= select_tag :role, options_for_select(["user", "staff"].map{|x| [x.humanize, x]}) %>
                 <label for="role">Role</label>
               </div>
             </div>

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       user = User.new(email: email, password: random_password)
       user.skip_confirmation!
       if user.save
-        user.add_role user_params[:role]&.downcase&.to_sym
+        user.add_role params[:role]&.downcase&.to_sym
         user.send_reset_password_instructions
       else
         next
@@ -57,11 +57,5 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js { render js: "window.location.href = '/users';" }
     end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit :role
   end
 end
