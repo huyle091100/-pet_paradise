@@ -3,9 +3,15 @@ Rails.application.routes.draw do
   resources :chat_messages
   resources :products
   resources :histories
+  resources :bookings
   resources :profile
   resources :bills, only: [:index, :show]
   resources :users do
+    collection do
+      post :import
+    end
+  end
+  resources :rooms do
     collection do
       post :import
     end

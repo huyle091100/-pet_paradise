@@ -1,0 +1,16 @@
+<tr id="<%= dom_id room %>">
+  <td><%= room.r_type.humanize %></td>
+  <td><%= room.weight.humanize %></td>
+  <td><%= room.price %></td>
+  <td><%= room.quantity %></td>
+  <td>
+    <%= link_to edit_room_path(room) do %>
+    <i class="material-icons">edit</i><span class="hide-menu"></span>
+    <% end %>
+    <!--    <a href="#"><i class="material-icons">edit</i><span class="hide-menu"></span></a>-->
+    <%= link_to room_path(room), data: { turbo: true, turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } do %>
+    <i class="material-icons">delete</i><span class="hide-menu"></span>
+    <% end %>
+  </td>
+</tr>

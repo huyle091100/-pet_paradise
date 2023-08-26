@@ -14,6 +14,7 @@ class CartsController < ApplicationController
       if current_user.carts.create! cart_params
         @cart = current_user.carts.active.count
         format.turbo_stream
+        format.html{redirect_to shop_path}
         # flash[:notice] = "Added a product to cart."
       else
         format.html

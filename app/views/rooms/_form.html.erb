@@ -1,0 +1,39 @@
+<%= form_with(model: @room) do |form| %>
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.select :r_type, Room.r_types.keys.map{|type| [type.humanize, type]}
+    %>
+    <label for="r_type">Room type</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.select :weight, Room.weights.keys.map{|type| [type.humanize, type]}
+    %>
+    <label for="weight">Weight</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.number_field :price, min: 1, required: true %>
+    <label for="price">Price/Day</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.number_field :quantity, min: 1, required: true %>
+    <label for="quantity">Quantity</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <button
+      class="btn cyan waves-effect waves-light right"
+      type="submit"
+      name="action"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+<% end %>
