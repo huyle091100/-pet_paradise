@@ -1,0 +1,37 @@
+<div class="col s1">
+  <a class="modal-trigger" href="#modal<%= room.id %>">
+    <div
+      class="<%= @bookings.where(room_id: room.id).count >= room.quantity ? 'room_booking' : 'room' %>"
+      id="room_<%= room.id %>"
+    >
+      # <%= @bookings.where(room_id: room.id).count %>
+      <p><%= weight_text(room.weight) %></p>
+    </div>
+  </a>
+  <div id="modal<%= room.id %>" class="modal">
+    <div class="modal-content">
+      <h4>List users booking</h4>
+
+      <table class="responsive-table datatable-select-inputs">
+        <thead>
+        <tr>
+          <th style="width: 15%">First Name</th>
+          <th style="width: 25%">Last Name</th>
+          <th style="width: 15%">Email</th>
+          <th style="width: 20%">Phone number</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @bookings.where(room_id: room.id).each do |booking| %>
+          <tr>
+            <td><%= booking.user.first_name %></td>
+            <td><%= booking.user.last_name %></td>
+            <td><%= booking.user.email %></td>
+            <td><%= booking.user.phone_number %></td>
+          </tr>
+          <% end %>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

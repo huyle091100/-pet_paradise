@@ -11,7 +11,9 @@ class WelcomeController < ApplicationController
 
   def shop
     q = params[:category]
+    qq = params[:q]
     @products = q ? Product.where(category: q) : Product.all
+    @products = qq ? @products.where("products.name like ? or products.category like ?", "%#{qq}%", "%#{Product.categories[qq] || Product.categories.values}%") : @products
     @products = @products.page(params[:page] || 1).per(@limit).order(created_at: :desc)
   end
 

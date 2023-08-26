@@ -25,15 +25,7 @@
         <br />
         <div class="row">
           <% @apartment.each do |room| %>
-          <div class="col s1">
-            <div
-              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
-              id="room_<%= room.id %>"
-            >
-              # <%= room.id %>
-              <p><%= weight_text(room.weight) %></p>
-            </div>
-          </div>
+            <%= render "manage_bookings/booking", room: room %>
           <% end %>
         </div>
         <br />
@@ -43,15 +35,7 @@
         <br />
         <div class="row">
           <% @vip.each do |room| %>
-          <div class="col s1">
-            <div
-              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
-              id="room_<%= room.id %>"
-            >
-              # <%= room.id %>
-              <p><%= weight_text(room.weight) %></p>
-            </div>
-          </div>
+            <%= render "manage_bookings/booking", room: room %>
           <% end %>
         </div>
         <br />
@@ -61,15 +45,7 @@
         <br />
         <div class="row">
           <% @penthouse.each do |room| %>
-          <div class="col s1">
-            <div
-              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
-              id="room_<%= room.id %>"
-            >
-              # <%= room.id %>
-              <p><%= weight_text(room.weight) %></p>
-            </div>
-          </div>
+            <%= render "manage_bookings/booking", room: room %>
           <% end %>
         </div>
       </div>

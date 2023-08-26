@@ -5,11 +5,7 @@
 </style>
 <div class="inner-page-banner">
   <div class="breadcrumb-vec-btm">
-    <img
-      class="img-fluid"
-      src="assets/images/bg/inner-banner-btm-vec.png"
-      alt=""
-    />
+    <%= image_tag "bg/inner-banner-btm-vec.png" %>
   </div>
   <div class="container">
     <div class="row justify-content-center align-items-center text-center">
@@ -21,17 +17,9 @@
       <div class="col-lg-6">
         <div class="banner-img d-lg-block d-none">
           <div class="banner-img-bg">
-            <img
-              class="img-fluid"
-              src="assets/images/bg/inner-banner-vec.png"
-              alt=""
-            />
+            <%= image_tag "cards/active-bg.jpg" %>
           </div>
-          <img
-            class="img-fluid"
-            src="assets/images/bg/inner-banner-img.png"
-            alt=""
-          />
+            <%= image_tag "cards/active-bg.jpg" %>
         </div>
       </div>
     </div>
@@ -285,7 +273,7 @@
                   <label for="started_at">Started at</label>
                   <div class="input-group date">
                     <%= f.text_field :started_at, class: "form-control", style:
-                    "height: 42px", autocomplete: 'off' %>
+                    "height: 42px", autocomplete: 'off', required: true %>
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -295,7 +283,7 @@
                   <label for="finished_at">Finished at</label>
                   <div class="input-group date">
                     <%= f.text_field :finished_at, class: "form-control", style:
-                    "height: 42px", autocomplete: 'off' %>
+                    "height: 42px", autocomplete: 'off', required: true %>
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -346,7 +334,10 @@
                               </div>
                               <% if booking.started_at > Time.now %>
                               <div class="replay-btn">
-                                <a href="#"><i class="bi bi-pencil"></i>Edit</a>
+                                <!-- <a href="#"><i class="bi bi-pencil"></i>Edit</a> -->
+                                <%= link_to booking_path(booking), data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                                  <i class="bi bi-x-octagon"></i>Cancel
+                                <% end %>
                               </div>
                               <% end %>
                             </div>
