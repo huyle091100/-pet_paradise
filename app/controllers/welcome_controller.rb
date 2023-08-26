@@ -10,6 +10,8 @@ class WelcomeController < ApplicationController
   end
 
   def shop
-    @products = Product.all.page(params[:page] || 1).per(@limit).order(created_at: :desc)
+    q = params[:category]
+    @products = q ? Product.where(category: q) : Product.all
+    @products = @products.page(params[:page] || 1).per(@limit).order(created_at: :desc)
   end
 end

@@ -7,7 +7,7 @@ class Momo::GetPaymentUrlService < ApplicationService
     @user = args[:user]
     @amount = args[:amount]
     @carts = args[:carts]
-    @data_cart = carts.group(:product_id).count(:product_id)
+    @data_cart = carts.active.group(:product_id).count(:product_id)
     @products = Product.where(id: data_cart.keys)
   end
 

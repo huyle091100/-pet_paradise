@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h5 class="card-title">Bill Detail</h5>
+        <table class="responsive-table datatable-select-inputs">
+          <thead>
+          <tr>
+            <th style="width: 15%">Name</th>
+            <th style="width: 15%">Price</th>
+            <th style="width: 10%">Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% @bill.bill_products.each do |product| %>
+                <%= render partial: "bills/product", locals: {product: product} %> 
+            <% end %>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

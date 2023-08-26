@@ -35,7 +35,7 @@
               </div>
               <div class="col s4" style="margin-bottom: 20px">
                   <label>Category *</label>
-                  <%= form.select :category, Product.categories.keys.map{|type| [type.humanize, type]}, include_blank: true %>
+                  <%= form.select :category, Product.categories.keys.map{|type| [type.humanize, type]} %>
               </div>
               <div class="col s6 imageX">
                   <label class="col s12" style="margin-bottom: 20px">Image</label>
