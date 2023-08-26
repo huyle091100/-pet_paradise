@@ -19,23 +19,23 @@
                 <h5 class="shop-widget-title">Category</h5>
                 <div class="checkbox-container">
                   <label class="containerss">Dog
-                    <input type="checkbox" name="category[]" value="dog">
+                    <input type="checkbox" name="category[]" value="dog" <%= params[:category] && params[:category].include?("dog") ? "checked" : '' %>>
                     <span class="checkmark"></span>
                   </label>
                   <label class="containerss">Cat
-                    <input type="checkbox" name="category[]" value="cat">
+                    <input type="checkbox" name="category[]" value="cat" <%= params[:category] && params[:category].include?("cat") ? "checked" : '' %>>
                     <span class="checkmark"></span>
                   </label>
                   <label class="containerss">Bird
-                    <input type="checkbox" name="category[]" value="bird">
+                    <input type="checkbox" name="category[]" value="bird" <%= params[:category] && params[:category].include?("bird") ? "checked" : '' %>>
                     <span class="checkmark"></span>
                   </label>
                   <label class="containerss">Fish
-                    <input type="checkbox" name="category[]" value="fish">
+                    <input type="checkbox" name="category[]" value="fish" <%= params[:category] && params[:category].include?("fish") ? "checked" : '' %>>
                     <span class="checkmark"></span>
                   </label>
                   <label class="containerss">Small Animal
-                    <input type="checkbox" name="category[]" value="small_animal">
+                    <input type="checkbox" name="category[]" value="small_animal" <%= params[:category] && params[:category].include?("small_animal") ? "checked" : '' %>>
                     <span class="checkmark"></span>
                   </label>
                 </div>

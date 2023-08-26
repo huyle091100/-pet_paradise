@@ -6,5 +6,6 @@ class BillsController < ApplicationController
   end
 
   def show
+    @bill = Bill.find_by id: params[:id]
   end
 end
