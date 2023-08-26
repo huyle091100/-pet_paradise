@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :confirmable, :validatable
   has_many :carts, dependent: :destroy
   has_many :bills, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   after_create_commit do
     create_chat
   end

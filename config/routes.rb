@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :histories
   resources :bookings
+  resources :manage_bookings
   resources :profile
   resources :bills, only: [:index, :show]
   resources :users do

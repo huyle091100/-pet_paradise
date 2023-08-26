@@ -2,6 +2,7 @@
 @import "dist/css/pages/dashboard1";
 @import "dist/css/pages/data-table";
 @import "dist/css/toast/toastr.min";
+@import "dist/css/bootstrap-material-datetimepicker";
 
 .chat-bubble {
   display: none;
@@ -28,4 +29,24 @@
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.room {
+  background-color: #198754;
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.room_booking {
+  background-color: #EC0023;
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
 }
