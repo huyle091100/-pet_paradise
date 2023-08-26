@@ -1,4 +1,5 @@
 class BillsController < ApplicationController
+  load_and_authorize_resource
   include ActiveStorage::SetCurrent
 
   def index

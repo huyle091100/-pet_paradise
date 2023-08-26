@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include ActiveStorage::SetCurrent
+  load_and_authorize_resource
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
