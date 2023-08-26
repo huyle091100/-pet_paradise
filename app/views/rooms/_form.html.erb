@@ -8,7 +8,7 @@
 </div>
 <div class="row">
   <div class="input-field col s12">
-    <%= form.select :weight, Room.weights.keys.map{|type| [type.humanize, type]}
+    <%= form.select :weight, Room.weights.keys.map{|type| [weight_text(type), type]}
     %>
     <label for="weight">Weight</label>
   </div>

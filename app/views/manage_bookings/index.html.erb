@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h5 class="card-title">Booking List</h5>
+        <div class="row">
+          <div class="col s3 right">
+            <%= form_for manage_bookings_path, data: { turbo: true }, html: {id:
+            "filter"}, method: :get do |f| %>
+            <label class="m-t-20">Filter by date</label>
+            <div class="input-fleid">
+              <input
+                type="text"
+                id="mdate"
+                name="mdate"
+                value="<%= params[:mdate] %>"
+              />
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <h4>Apartment</h4>
+        </div>
+        <br />
+        <div class="row">
+          <% @apartment.each do |room| %>
+          <div class="col s1">
+            <div
+              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
+              id="room_<%= room.id %>"
+            >
+              # <%= room.id %>
+              <p><%= weight_text(room.weight) %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <br />
+        <div class="row">
+          <h4>Vip</h4>
+        </div>
+        <br />
+        <div class="row">
+          <% @vip.each do |room| %>
+          <div class="col s1">
+            <div
+              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
+              id="room_<%= room.id %>"
+            >
+              # <%= room.id %>
+              <p><%= weight_text(room.weight) %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <br />
+        <div class="row">
+          <h4>Penthouse</h4>
+        </div>
+        <br />
+        <div class="row">
+          <% @penthouse.each do |room| %>
+          <div class="col s1">
+            <div
+              class="<%= @booking_room_ids.include?(room.id) ? 'room_booking' : 'room' %>"
+              id="room_<%= room.id %>"
+            >
+              # <%= room.id %>
+              <p><%= weight_text(room.weight) %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"></script>
+<script>
+  jQuery(function ($) {
+    $(document).ready(function () {
+      var start = new Date();
+      // $("#mdate").bootstrapMaterialDatePicker({ weekStart: 0, time: false });
+      var datetime = $("#mdate").bootstrapMaterialDatePicker({
+        format: "DD/MM/YYYY",
+        weekStart: 0,
+        time: false,
+        currentDate: start,
+      });
+      datetime.bind("change", function (e) {
+        console.log(e.target.value);
+        $("#filter").trigger("submit");
+      });
+    });
+  });
+</script>
