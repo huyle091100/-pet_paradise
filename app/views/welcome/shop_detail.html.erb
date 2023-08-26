@@ -1,0 +1,78 @@
+<div class="shop-details-page pt-120 mb-120">
+  <div class="container">
+    <div class="row g-lg-4 gy-5 mb-120">
+      <div class="col-lg-7">
+        <div class="tab-content tab-content1" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade active show"
+            id="v-pills-img1"
+            role="tabpanel"
+            aria-labelledby="v-pills-img1-tab"
+          >
+            <img class="img-fluid" src="<%= @product.image_url %>" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="shop-details-content">
+          <h3><%= @product.name %></h3>
+          <div class="price-tag">
+            <h4>
+              <%= number_to_currency(@product.price, unit: "VND", format: "%n
+              %u", precision: 0) %>
+            </h4>
+          </div>
+          <div
+            class="shop-quantity d-flex align-items-center justify-content-start mb-20"
+          >
+            <%= form_for Cart.new, url: carts_path, data: { turbo: true }, html: {id: "add_to_cart_#{@product.id}"}, method: :post do |f| %> 
+            <%= f.hidden_field :product_id, value: @product.id %> 
+            <%= f.hidden_field :user_id, value: current_user&.id %>
+            <button type="submit">
+              <a class="primary-btn3">Add to cart</a>
+            </button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-120">
+      <div class="col-lg-12">
+        <div
+          class="nav nav2 nav nav-pills"
+          id="v-pills-tab2"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <button
+            class="nav-link active"
+            id="v-pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-home"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="false"
+          >
+            Description
+          </button>
+        </div>
+
+        <div class="tab-content tab-content2" id="v-pills-tabContent2">
+          <div
+            class="tab-pane fade active show"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <div class="description">
+              <p class="para-2 mb-3">
+                <%= @product.description %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

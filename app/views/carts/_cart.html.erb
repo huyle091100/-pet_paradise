@@ -13,7 +13,10 @@
   <td data-label="Food Name">
     <a href="#"><%= product.name %></a>
   </td>
-  <td data-label="Discount Price"><%= product.price %> VND</td>
+  <td data-label="Discount Price">
+    <%= number_to_currency(product.price, unit: "VND", format: "%n %u",
+    precision: 0) %>
+  </td>
   <td data-label="Quantity">
     <div class="quantity d-flex align-items-center">
       <div class="quantity-nav nice-number d-flex align-items-center">

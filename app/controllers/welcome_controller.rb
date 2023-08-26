@@ -14,4 +14,8 @@ class WelcomeController < ApplicationController
     @products = q ? Product.where(category: q) : Product.all
     @products = @products.page(params[:page] || 1).per(@limit).order(created_at: :desc)
   end
+
+  def shop_detail
+    @product = Product.find_by id: params[:id]
+  end
 end
