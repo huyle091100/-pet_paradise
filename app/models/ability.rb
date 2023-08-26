@@ -14,6 +14,9 @@ class Ability
         can :manage, ChatMessage
         can :manage, Chat
         cannot :manage, Bill
+        cannot :manage, Room
+        cannot :manage, User
+        cannot :manage, Booking
       end
     #
     # The first argument to `can` is the action you are giving the user 

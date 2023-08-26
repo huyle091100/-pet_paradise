@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   load_and_authorize_resource
   def index
-    @rooms = Room.where.not(id: current_user.id)
+    @rooms = Room.all
   end
   def new
     @room = Room.new

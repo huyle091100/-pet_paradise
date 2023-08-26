@@ -1,36 +1,25 @@
 <!-- ========== Top Bar Start============= -->
-<div class="top-bar two">
-  <div class="container-lg container-fluid">
-    <div class="row">
-      <div
-        class="col-lg-12 d-flex align-items-center justify-content-md-between justify-content-center"
-      >
-        <div class="contact-number">
-          <a href="tel:+1(541)754-3020"
-            ><%= image_tag "icon/support2.svg" %> +1 (541) 754-3010</a
-          >
-        </div>
-        <div class="opening-time text-center">
-          <p>Free Shipping On Shipment of 100.000 VND Or More</p>
-        </div>
-        <div class="social-area">
-          <ul>
-            <li>
-              <a href="#"><i class="bx bxl-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="bx bxl-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="bx bxl-pinterest-alt"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="bx bxl-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
+<div class="top-bar">
+  <div class="container-lg container-fluid ">
+      <div class="row">
+          <div class="col-lg-12 d-flex align-items-center justify-content-md-between justify-content-center">
+              <div class="social-area">
+                  <ul>
+                      <li><a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a></li>
+                      <li><a href="https://twitter.com/"><i class='bx bxl-twitter'></i></a></li>
+                      <li><a href="https://www.pinterest.com/"><i class='bx bxl-pinterest-alt' ></i></a></li>
+                      <li><a href="https://www.instagram.com/"><i class='bx bxl-instagram' ></i></a></li>
+
+                  </ul>
+              </div>
+              <div class="opening-time text-center">
+                  <p>Opening Hours<br><span>Mon - Sat 9.00 - 19.00</span></p>
+              </div>
+              <div class="contact-number">
+                  <a href="tel:+84914724123">+84 914.724.123 <img src="assets/images/icon/support.svg" alt=""></a>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 </div>
 <!-- ========== Top Bar End============= -->
@@ -65,10 +54,8 @@
         <li class="menu-item-has-children">
           <a href="#">Services</a><i class="bi bi-plus dropdown-icon"></i>
           <ul class="sub-menu z-10">
-            <li><a href="service-details.html">Daycare </a></li>
-            <li><a href="service-details.html">Grooming</a></li>
-            <li><a href="service-details.html">Boarding</a></li>
-            <li><a href="service-details.html">Veterinary</a></li>
+            <li><a href="<%= bookings_path %>">Booking </a></li>
+            <li><a href="#">Spa</a></li>
           </ul>
         </li>
         <!--        <li class="menu-item-has-children">-->
@@ -97,10 +84,10 @@
           <a href="<%= histories_path %>">History</a
           ><i class="bi bi-plus dropdown-icon"></i>
         </li>
-        <li>
+        <!-- <li>
           <a href="<%= bookings_path %>">Booking</a
           ><i class="bi bi-plus dropdown-icon"></i>
-        </li>
+        </li> -->
         <!--        <li class="menu-item-has-children">-->
         <!--          <a href="#">Blog</a><i class="bi bi-plus dropdown-icon"></i>-->
         <!--          <ul class="sub-menu z-10">-->
@@ -122,7 +109,7 @@
         <div class="hotline mb-5">
           <div class="hotline-info">
             <span>Click To Call</span>
-            <h6><a href="tel:+1(541)754-3010">+1 (541) 754-3010</a></h6>
+            <h6><a href="tel:+84914724123">+84 914.724.123</a></h6>
           </div>
         </div>
         <ul class="social-link mb-5">
@@ -198,13 +185,8 @@
               />
             </svg>
           </a>
-          <form class="nav__search-form z-10">
-            <input
-              type="text"
-              placeholder="Search Products"
-              id="search"
-              autocomplete="off"
-            />
+          <%= form_tag shop_path, method: :get, class: "nav__search-form z-10" do %>
+            <%= text_field_tag :q, nil, placeholder: "Search Products", autocomplete: "off" %>
             <button type="submit">
               <svg
                 width="15"
@@ -217,7 +199,7 @@
                 />
               </svg>
             </button>
-          </form>
+          <% end %>
         </li>
         <li>
           <a
