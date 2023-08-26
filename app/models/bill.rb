@@ -1,5 +1,5 @@
 class Bill < ApplicationRecord
   has_many :bill_products, dependent: :destroy
   belongs_to :user
-  enum status: [:unpaid, :paid]
+  enum status: [:unpaid, :paid, :cash]
 end

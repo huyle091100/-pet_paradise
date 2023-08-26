@@ -2,7 +2,20 @@
   <td><%= bill.order_info %></td>
   <td><%= link_to bill.order_id, bill_path(bill) %></td>
   <td><%= bill.amount %></td>
-  <td><%= bill.status.humanize %></td>
+  <td>
+    <div class="bill-status-<%= bill.status %>">
+    <%= bill.status.humanize %>
+  </div>  
+  </td>
   <td><%= bill.bill_products.pluck(:quantity).sum %></td>
   <td><%= bill.response_time ? Time.at(bill.response_time/1000).in_time_zone("Asia/Ho_Chi_Minh").strftime("%H:%M %d-%m-%Y") : '' %></td>
+  <td>
+    <% if bill.is_shipped %>
+      <i class="material-icons">check_circle</i><span class="hide-menu">Shipped</span>
+    <% else %>
+      <%= link_to bill_path(bill), data: { turbo: true, turbo_method: :put} do %>
+        <i class="material-icons">check_circle</i><span class="hide-menu">Mark as shipped</span>
+      <% end %>
+    <% end %>
+  </td>
 </tr>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :bookings
   resources :manage_bookings
   resources :profile
-  resources :bills, only: [:index, :show]
+  resources :bills, only: [:index, :show, :update]
   resources :users do
     collection do
       post :import
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       patch :update_quantity
       post :checkout_momo
       get :checkout
+      put :cash
     end
   end
   devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }

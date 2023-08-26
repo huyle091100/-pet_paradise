@@ -9,4 +9,13 @@ class BillsController < ApplicationController
   def show
     @bill = Bill.find_by id: params[:id]
   end
+
+  def update
+    @bill = Bill.find_by id: params[:id]
+    @bill.update! is_shipped: true
+    flash[:notice] = "Mark shipped successfully!"
+    respond_to do |format|
+      format.js { render js: "window.location.href = '/bills';" }
+    end
+  end
 end

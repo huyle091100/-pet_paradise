@@ -50,3 +50,30 @@
   font-weight: 600;
   text-align: center;
 }
+
+.bill-status-unpaid {
+  border: 1px solid #EC0023;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 5px;
+  color: white;
+  background-color: #EC0023;
+}
+
+.bill-status-paid {
+  border: 1px solid #198754;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 5px;
+  color: white;
+  background-color: #198754;
+}
+
+.bill-status-cash {
+  border: 1px solid #e3c748;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 5px;
+  color: black;
+  background-color: #e3c748;
+}
