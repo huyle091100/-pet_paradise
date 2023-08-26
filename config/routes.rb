@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "shop", to: "welcome#shop"
   get "shop_detail/:id", to: "welcome#shop_detail", as: :shop_detail
+  get "spa", to: "welcome#spa", as: :spa
   namespace :api do
     namespace :v1 do
       resources :bills, only: [:create]

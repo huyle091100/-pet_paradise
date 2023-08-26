@@ -13,8 +13,9 @@ class Ability
         can :manage, Chat
         can :manage, Bill
         cannot :manage, Room
-        can :manage, User
+        cannot :manage, User
         can :manage, Booking
+        can :manage, Product
       else
         can :manage, Cart
         can :manage, ChatMessage
@@ -22,7 +23,8 @@ class Ability
         cannot :manage, Bill
         cannot :manage, Room
         cannot :manage, User
-        cannot :manage, Booking
+        can :manage, Booking
+        cannot :manage, Product
       end
     #
     # The first argument to `can` is the action you are giving the user 
