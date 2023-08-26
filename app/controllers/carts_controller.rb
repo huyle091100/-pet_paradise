@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   include ActiveStorage::SetCurrent
 
   before_action :set_product, only: [:create, :update_quantity]
-  before_action :total, only: [:index, :checkout]
+  before_action :total, only: [:index, :checkout_momo, :checkout]
   def index
     products = current_user.carts.active.group(:product_id).count.keys
     @carts = Product.where(id: products)
@@ -46,14 +46,26 @@ class CartsController < ApplicationController
     end
   end
 
-  def checkout
-    momo = Momo::GetPaymentUrlService.call({user: current_user, amount: @total, carts: @carts})
+  def checkout_momo
+    momo = Momo::GetPaymentUrlService.call({user: current_user, amount: @total, carts: @carts, params: params})
     if momo["resultCode"] == 0
       redirect_to momo["payUrl"], allow_other_host: true
     else
       flash[:notice] = "Checkout momo fail!"
       redirect_to carts_path
     end
+  end
+
+  def checkout
+    products = current_user.carts.active.group(:product_id).count.keys
+    @products = Product.where(id: products)
+  end
+
+  def destroy
+      carts = current_user.carts.active.where product_id: params[:id]
+      carts.update_all status: :inactive
+      flash[:notice] = "Remove cart successfully!"
+      redirect_to carts_path
   end
 
   private

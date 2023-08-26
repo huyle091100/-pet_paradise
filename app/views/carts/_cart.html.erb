@@ -1,22 +1,32 @@
 <tr>
   <td data-label="Delete">
+    <%= link_to cart_path(product.id), data: { turbo: true, turbo_method:
+    :delete } do %>
     <div class="delete-icon">
       <i class="bi bi-x"></i>
     </div>
+    <% end %>
   </td>
   <td data-label="Image">
     <%= image_tag product.image_url ? product.image_url : '' %>
   </td>
-  <td data-label="Food Name"><a href="shop-details.html"><%= product.name %></a></td>
+  <td data-label="Food Name">
+    <a href="shop-details.html"><%= product.name %></a>
+  </td>
   <td data-label="Discount Price"><%= product.price %> VND</td>
   <td data-label="Quantity">
-
     <div class="quantity d-flex align-items-center">
       <div class="quantity-nav nice-number d-flex align-items-center">
-        <%= form_for Cart.new, url: update_quantity_carts_path, data: { turbo: true }, html: {id: "update_quantity_#{product.id}"}, method: :patch do |f| %>
-          <%= f.hidden_field :product_id, value: product.id %>
-          <input type="number" value="<%= current_user.carts.active.where(product_id: product.id).count %>"  min="1" name="quantity">
-      <% end %>
+        <%= form_for Cart.new, url: update_quantity_carts_path, data: { turbo:
+        true }, html: {id: "update_quantity_#{product.id}"}, method: :patch do
+        |f| %> <%= f.hidden_field :product_id, value: product.id %>
+        <input
+          type="number"
+          value="<%= current_user.carts.active.where(product_id: product.id).count %>"
+          min="1"
+          name="quantity"
+        />
+        <% end %>
       </div>
     </div>
   </td>
