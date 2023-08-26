@@ -41,13 +41,18 @@
         </table>
         <ul class="cart-btn-group">
           <li><a href="<%= shop_path %>" class="primary-btn2 btn-lg">Continue to shopping</a></li>
-          <li>
-<!--            <a href="<%#= checkout_carts_path %>" class="primary-btn3 btn-lg" data-turbo="false" methods="post">Checkout with momo</a>-->
-            <%#= button_to 'Checkout with momo', checkout_carts_path, class: 'primary-btn3 btn-lg', data: { turbo: false, turbo_method: :post, method: :post }, method: :post %>
-            <%= button_to checkout_carts_path, data: { turbo: false }, class: "primary-btn3 btn-lg" do %>
-              Checkout with momo
-            <% end %>
-          </li>
+          <% if current_user.carts.active.count > 0 %>
+            <li>
+              <%= link_to "Checkout", checkout_carts_path, class: "primary-btn3 btn-lg" %>
+              <%
+=begin%>
+ <%= button_to checkout_momo_carts_path, data: { turbo: false }, class: "primary-btn3 btn-lg" do %>
+                Checkout with momo
+              <% end %> 
+<%
+=end%>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

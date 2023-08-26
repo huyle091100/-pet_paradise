@@ -50,7 +50,8 @@ $('.datatable-select-inputs').DataTable({
                 select.append('<option value="' + d + '">' + d + '</option>');
             });
         });
-    }
+    },
+    ordering: false
 });
 
 //==================================================//

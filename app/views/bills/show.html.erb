@@ -3,6 +3,9 @@
     <div class="card">
       <div class="card-content">
         <h5 class="card-title">Bill Detail</h5>
+        <p>Buyer: <%= "#{@bill.user.first_name} #{@bill.user.last_name}" %></p>
+        <p>Shipping address: <%= @bill.address %></p>
+        <p>Phone number: <%= @bill.phone_number %></p>
         <table class="responsive-table datatable-select-inputs">
           <thead>
           <tr>

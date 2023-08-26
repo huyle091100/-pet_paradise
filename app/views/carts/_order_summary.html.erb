@@ -1,0 +1,20 @@
+<li class="single-product d-flex justify-content-start">
+                                <div class="product-img">
+                                    <%= image_tag product.image_url ? product.image_url : '' %>
+                                </div>
+                                <div class="product-info">
+                                    <h5 class="product-title"><a href="#"><%= product.name %></a></h5>
+                                    <div class="product-total d-flex align-items-center">
+                                        <div class="quantity">
+                                            <div class="quantity d-flex align-items-center">
+                                                <div class="quantity-nav nice-number d-flex align-items-center">
+                                                    <%= current_user.carts.active.where(product_id: product.id).count %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <strong> <i class="bi bi-x-lg px-2"></i>
+                                            <span class="product-price"><%= product.price %> VND</span>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </li>
