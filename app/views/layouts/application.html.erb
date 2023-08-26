@@ -7,9 +7,9 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-  <%= stylesheet_link_tag can?(:manage, Booking) && check_admin_layout ? "application2" : "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag can?(:manage, Bill) && check_admin_layout ? "application2" : "application", "data-turbo-track": "reload" %>
 
-  <%= javascript_importmap_tags can?(:manage, Booking) && check_admin_layout ? "application2" : "application" %>
+  <%= javascript_importmap_tags can?(:manage, Bill) && check_admin_layout ? "application2" : "application" %>
   <style>
       .msg_sender {
           clear: both;
@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
 </head>
 
-<body class="<%= can?(:manage, Booking) && check_admin_layout ? '' : 'home-pages-2' %>">
-<% if can?(:manage, Booking) && check_admin_layout %>
+<body class="<%= can?(:manage, Bill) && check_admin_layout ? '' : 'home-pages-2' %>">
+<% if can?(:manage, Bill) && check_admin_layout %>
   <div class="main-wrapper" id="main-wrapper">
     <%= render "layouts/header_admin" %>
     <%= render "layouts/left_side_bar" %>

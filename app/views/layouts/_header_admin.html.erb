@@ -116,7 +116,7 @@
                   <!--                  <img src="../../assets/images/users/2.jpg" alt="user">-->
                 </div>
                 <div class="u-text">
-                  <h4>Steve Harvey</h4>
+                  <h4><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
                   <p><%= current_user.email %></p>
                   <a
                     class="waves-effect waves-light btn-small red white-text"

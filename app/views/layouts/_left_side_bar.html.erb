@@ -2,6 +2,7 @@
   <ul id="slide-out" class="sidenav">
     <li>
       <ul class="collapsible">
+        <% if can?(:manage, User)%>
         <li>
           <a href="javascript: void(0);" class="collapsible-header has-arrow"
             ><i class="material-icons">group</i
@@ -24,6 +25,7 @@
             </ul>
           </div>
         </li>
+        <% end %>
         <li>
           <a href="javascript: void(0);" class="collapsible-header has-arrow"
             ><i class="material-icons">shopping_basket</i

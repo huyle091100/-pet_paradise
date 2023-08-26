@@ -33,9 +33,11 @@
                                 </div>
                                  <div class="place-order-btn">
                                     <button type="submit" class="primary-btn1 lg-btn">Pay with momo</button>
+                                    <%= link_to "Pay in cash", cash_carts_path, data: { turbo: true, turbo_method: :put}, class: "primary-btn2 btn-lg" %>
                                 </div>
                             </div>
                         <% end %>
+                        
                     </div>
                 </div>
                 <aside class="col-lg-5">
