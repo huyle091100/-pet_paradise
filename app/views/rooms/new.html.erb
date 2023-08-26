@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">Add new Room</h5>
+          <%= render "form"%>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">Or import file (excel)</h5>
+          <%= form_with(url: import_rooms_path, local: true, multipart: true) do
+          |form| %>
+          <div class="row">
+            <div class="input-field col s10">
+              <div class="file-field input-field">
+                <div class="btn cyan">
+                  <span>File</span>
+                  <%= form.file_field :file, accept: '.xlsx' %>
+                </div>
+                <div class="file-path-wrapper">
+                  <input
+                    class="file-path validate"
+                    type="text"
+                    placeholder="Choose File Here"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button
+                    class="btn cyan waves-effect waves-light right"
+                    type="submit"
+                    name="action"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
