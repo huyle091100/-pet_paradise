@@ -1,0 +1,14 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 30%">Order Id</th>
+        <th style="width: 15%">Amount</th>
+        <th style="width: 10%">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "histories/history", collection: @histories %>
+    </tbody>
+  </table>
+</div>

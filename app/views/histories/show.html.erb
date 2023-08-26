@@ -1,0 +1,26 @@
+<div class="cart-section pt-120 pb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-wrapper">
+          <table class="eg-table table cart-table">
+            <thead>
+              <tr>
+                <th style="width: 30%">Image</th>
+                <th style="width: 30%">Product Name</th>
+                <th style="width: 15%">Price</th>
+                <th style="width: 10%">Quantity</th>
+                <th style="width: 15%">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @bill_products.each do |bill_product| %> <%= render partial:
+              "histories/cart", locals: {bill_product: bill_product, product:
+              bill_product.product} %> <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

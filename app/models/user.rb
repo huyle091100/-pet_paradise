@@ -3,6 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :confirmable, :validatable
   has_many :carts
+  has_many :bills
   after_create_commit do
     create_chat
   end
