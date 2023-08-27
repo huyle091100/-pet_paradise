@@ -24,4 +24,18 @@ class WelcomeController < ApplicationController
   def spa
 
   end
+
+
+  def update_password
+  end
+
+  def edit_password
+    @user = current_user
+    if @user.update params.require(:user).permit(:password, :password_confirmation)
+      flash[:notice] = "Change password successfully!"
+    else
+      flash[:notice] = @user.errors.full_messages.to_sentence
+    end
+    redirect_to shop_path
+  end
 end

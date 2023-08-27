@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       post :import
     end
   end
+  get :update_password, to: "welcome#update_password", as: :update_password
+  put :edit_password, to: "welcome#edit_password", as: :edit_password
   resources :rooms do
     collection do
       post :import

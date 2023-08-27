@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :bills, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  validates :phone_number, format: {with: /\A\d{10,12}\z/, message: "Please enter a valid phone number"}
+  validates :phone_number, format: {with: /\A\d{10,12}\z/, message: "Please enter a valid phone number", allow_blank: true}
 
   after_create_commit do
     create_chat
