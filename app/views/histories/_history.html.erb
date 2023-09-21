@@ -2,4 +2,5 @@
   <td><%= link_to history.order_id, history_path(history) %></td>
   <td><%= history.amount %></td>
   <td><%= history.bill_products.pluck(:quantity).sum %></td>
+  <td><%= history.is_shipped ? "Shipped" : "Not shipped yet" %></td>
 </tr>

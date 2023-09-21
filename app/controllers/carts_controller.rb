@@ -11,7 +11,10 @@ class CartsController < ApplicationController
 
   def create
     respond_to do |format|
-      if current_user.carts.create! cart_params
+      carts_active = current_user.carts.active.where(product_id: cart_params[:product_id]).count
+      if carts_active >= @product.quantity
+        format.html{redirect_to shop_path, notice: "You can't add more than #{@product.quantity} products to your cart."}
+      elsif current_user.carts.create! cart_params
         @cart = current_user.carts.active.count
         format.turbo_stream
         format.html{redirect_to shop_path}
@@ -24,27 +27,38 @@ class CartsController < ApplicationController
 
   def update_quantity
     carts_active = current_user.carts.active.where(product_id: @product.id)
-    if params[:quantity]&.to_i > carts_active.count
+    message = ""
+    if params[:quantity]&.to_i > @product.quantity
+      redirect_to carts_path, notice: "You can't add more than #{@product.quantity} products to your cart."
+    elsif params[:quantity]&.to_i > carts_active.count
       add_carts = params[:quantity]&.to_i - carts_active.count
       add_carts.times do
         current_user.carts.create! product_id: @product.id
       end
-    else
-      remove_carts = carts_active.count - params[:quantity]&.to_i
-      remove_carts.times do
-        carts_active.first.destroy!
-        carts_active.reload
-      end
-    end
-    @total = 0
+      @total = 0
     current_user.carts.active.includes(:product).each do |l_prod|
       @total += l_prod.product.price
     end
     @cart = current_user.carts.active.count
     respond_to do |format|
         format.turbo_stream
-        # flash[:notice] = "Added a product to cart."
     end
+    else
+      remove_carts = carts_active.count - params[:quantity]&.to_i
+      remove_carts.times do
+        carts_active.first.destroy!
+        carts_active.reload
+      end
+      @total = 0
+    current_user.carts.active.includes(:product).each do |l_prod|
+      @total += l_prod.product.price
+    end
+    @cart = current_user.carts.active.count
+    respond_to do |format|
+        format.turbo_stream
+    end
+    end
+    
   end
 
   def checkout_momo
