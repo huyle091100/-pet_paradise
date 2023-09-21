@@ -18,4 +18,10 @@
   <td data-label="Subtotal">
     <div id="subtotal_<%= product.id %>"><%= bill_product.total_amount %></div>
   </td>
+  <td>
+    <div class="bill-status-<%= bill_product.bill.status %>">
+      <%= bill_product.bill.status.humanize %>
+    </div>  
+  </td>
+  <td><%= bill_product.bill.is_shipped ? "Shipped" : "Not shipped yet" %></td>
 </tr>

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def set_chat
     @chat = current_user&.has_role?(:admin) ? 
-      Chat.includes(:chat_messages).where(receiver_id: current_user.id).order("chat_messages.created_at desc") : 
-      Chat.includes(:chat_messages).where(sender_id: current_user&.id).order("chat_messages.created_at desc")
+    Chat.joins(:chat_messages).where(receiver_id: current_user.id).order("chat_messages.created_at desc").uniq :
+    Chat.joins(:chat_messages).where(sender_id: current_user&.id).order("chat_messages.created_at desc").uniq
   end
 end
