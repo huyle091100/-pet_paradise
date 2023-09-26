@@ -2,11 +2,19 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
+    user = User.find_by(id: message.user_id)
+    if user.has_role?(:admin) || user.has_role?(:staff)
+      recipients = User.where(id: message.chat.sender_id)
+      recipients = recipients + (User.with_any_role(:staff, :admin) - User.where(id: message.user_id))
+    else
+      recipients = User.with_any_role(:staff, :admin)
+    end
     sender = User.find_by id: message.user_id
-    recipient = User.find_by(id: message.user_id == message.chat.receiver_id ? message.chat.sender_id : message.chat.receiver_id )
 
     broadcast_to_sender(sender, message)
-    broadcast_to_recipient(recipient, message)
+    recipients.each do |recipient|
+      broadcast_to_recipient(recipient, message)
+    end
   end
 
   private
