@@ -254,19 +254,24 @@
               <%= form_for Booking.new, url: bookings_path, data: { turbo:
               false, remote: false}, method: :post do |f| %>
               <div class="row">
-                <div class="col s3">
+                <div class="col s2">
                   <label for="r_type">Room type</label>
                   <br />
                   <%= select_tag :r_type,
                   options_for_select(Room.r_types.keys.map{|type|
                   [type.humanize, type]}) %>
                 </div>
-                <div class="col s3">
+                <div class="col s2">
                   <label for="weight">Weight</label>
                   <br />
                   <%= select_tag :weight,
                   options_for_select(Room.weights.keys.map{|type|
                   [weight_text(type), type]}) %>
+                </div>
+                <div class="col s2">
+                  <label for="quantity">Quantity</label>
+                  <br />
+                  <%= number_field_tag :quantity, {}, class: "form-control", style: "width: 100px; height: 42px" %>
                 </div>
 
                 <div class="col s3">
@@ -332,7 +337,7 @@
                                   <%= booking.created_at.strftime("%d/%m/%Y") %>
                                 </div>
                               </div>
-                              <% if booking.started_at > Time.now %>
+                              <% if booking.started_at.strftime("%d/%m/%Y") >= Time.now.strftime("%d/%m/%Y") %>
                               <div class="replay-btn">
                                 <!-- <a href="#"><i class="bi bi-pencil"></i>Edit</a> -->
                                 <%= link_to booking_path(booking), data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
@@ -343,7 +348,7 @@
                             </div>
                             <div class="c-body">
                               <p>
-                                You have booked a hotel room type
+                                You have booked <b><%= booking.quantity %></b> room type
                                 <b><%= booking.room.r_type.humanize %></b> for
                                 pet
                                 <b><%= weight_text(booking.room.weight) %></b>
