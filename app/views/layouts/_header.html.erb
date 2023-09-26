@@ -204,8 +204,8 @@
         <li>
           <a
             href="#"
-            id="open-chat-<%= @chat&.first&.id %>"
-            onclick="toggleChat(<%= @chat&.first&.id %>)"
+            id="open-chat-<%= Chat.find_by(sender_id: current_user&.id)&.id %>"
+            onclick="toggleChat(<%= Chat.find_by(sender_id: current_user&.id)&.id %>)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

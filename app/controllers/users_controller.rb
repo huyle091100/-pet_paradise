@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       user.skip_confirmation!
       if user.save
         user.add_role params[:role]&.downcase&.to_sym
+        Chat.create(sender_id: user.id) if params[:role]&.downcase != "admin" && params[:role]&.downcase != "staff"
         user.send_reset_password_instructions
       else
         next
